@@ -1,4 +1,6 @@
 import type {Metadata} from "next";
+import {Navbar} from "./components/common/navbar/navbar";
+import {Footer} from "./components/common/footer/footer";
 import {Roboto} from "next/font/google";
 import "./globals.css";
 
@@ -20,7 +22,9 @@ export default function RootLayout({
    return (
       <html lang="en">
          <body className={roboto.className}>
+            <Navbar />
             <main>{children}</main>
+            <Footer />
          </body>
       </html>
    );
