@@ -6,6 +6,6 @@ interface Props {
 }
 
 export default function SectionTitle({children, align = "text-left"}: Props) {
-   const className = `${align} text-3xl font-black py-4`;
+   const className = `${align} text-2xl font-black py-4`;
    return <h1 className={className}>{children}</h1>;
 }
