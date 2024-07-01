@@ -1,3 +1,10 @@
 export default function ImagesDevFest() {
-   return <p>Imagens</p>;
+   return (
+      <div>
+         <img src="" alt="" />
+         <img src="" alt="" />
+         <img src="" alt="" />
+         <img src="" alt="" />
+      </div>
+   );
 }

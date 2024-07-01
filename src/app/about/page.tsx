@@ -1,7 +1,11 @@
-import ImagesDevFest from "../components/about/ImagesDevFest";
-import SectionDescription from "../components/common/SectionDescription";
-import SectionTitle from "../components/common/SectionTitle";
+import Link from "next/link";
 import Image from "next/image";
+
+import ImagesDevFest from "../components/about/ImagesDevFest";
+import SectionTitle from "../components/common/SectionTitle";
+import SectionDescription from "../components/common/SectionDescription";
+import {Suspense} from "react";
+import Modal from "../components/common/Modal";
 
 export default function About() {
    return (
@@ -19,7 +23,7 @@ export default function About() {
             </div>
          </section>
 
-         <section className="container flex flex-col gap-8 md:flex-row md:gap-16 py-16">
+         <section className="container flex flex-col gap-8 md:flex-row md:gap-16 py-8 md:py-16">
             <div>
                <SectionTitle align="sm:text-center">O que é o GDG?</SectionTitle>
                <SectionDescription>
@@ -27,9 +31,16 @@ export default function About() {
                   uma ampla variedade de eventos e atividades emocionantes, incluindo meetups, hackathons, workshops e conferências.
                </SectionDescription>
             </div>
-            <div className="min-w-96">
-               <Image src="/img/gdg/google_io.jpg" width={500} height={500} alt="GDG - Google Io" />
+            <div className="md:min-w-96">
+               <Link href="?modal=true">
+                  <Image src="/img/gdg/google_io.jpg" width={500} height={500} alt="GDG - Google Io" />
+               </Link>
             </div>
+            <Suspense fallback={<>Loading...</>}>
+               <Modal>
+                  <Image src="/img/gdg/google_io.jpg" width={700} height={700} alt="GDG - Google Io" />
+               </Modal>
+            </Suspense>
          </section>
 
          <section className="container"></section>
