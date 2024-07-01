@@ -18,7 +18,7 @@ function Modal({children}: Props) {
    return (
       <>
          {modal && (
-            <dialog className="fixed left-0 top-0 w-full h-full bg-black bg-opacity-50 z-50 overflow-auto backdrop-blur flex justify-center items-center">
+            <dialog className="fixed left-0 top-0 w-full h-full bg-black bg-opacity-50 z-50 overflow-auto backdrop-blur flex justify-center items-center p-4">
                <div className="relative">
                   <Link href={pathname} className="absolute right-0 m-2">
                      <div className="bg-white rounded-full w-8 h-8 flex justify-center items-center">

@@ -10,7 +10,7 @@ import Modal from "../components/common/Modal";
 export default function About() {
    return (
       <div>
-         <section className="container pt-12 pb-6">
+         <section className="container py-6">
             <div>
                <SectionTitle align="text-center">O que é o DevFest?</SectionTitle>
                <SectionDescription>
