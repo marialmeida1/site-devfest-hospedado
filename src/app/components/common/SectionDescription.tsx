@@ -5,5 +5,5 @@ interface Props {
 }
 
 export default function SectionDescription({children}: Props) {
-   return <p className="text-justify">{children}</p>;
+   return <p className="text-justify text-wrap">{children}</p>;
 }
