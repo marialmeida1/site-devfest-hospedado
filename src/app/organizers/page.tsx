@@ -1,5 +1,5 @@
 import React from 'react';
-import Detail from '../components/common/detailCard';
+import Detail from '../components/common/DetailCard';
 
 export default function Organizers() {
    return <>
