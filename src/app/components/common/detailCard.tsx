@@ -1,24 +1,39 @@
 import React from "react";
 
+import Link from "next/link";
+import Image from "next/image";
+
+import SectionTitle from "../common/SectionTitle";
+import SectionDescription from "../common/SectionDescription";
+import Modal from "../common/Modal";
+
+import { Suspense } from "react";
+
 interface DetailProps {
-  name: string;
+  title: string;
   image: string;
   text: string;
 }
 
-const Detail: React.FC<DetailProps> = ({ name, image, text }) => {
+const Detail: React.FC<DetailProps> = ({ title, image, text }) => {
   return (
-    <div className="flex flex-col md:flex-row items-start md:space-x-4 mb-8">
-      <div className="flex-1">
-        <h2 className="text-xl font-bold mb-2">{name}</h2>
-        <p>{text}</p>
-      </div>
-      {image ? (
-        <div className="w-full md:w-52 h-52 md:h-auto bg-gray-300 flex-shrink-0">
-          <img className="w-full h-full object-cover" src={image} alt={name} />
+    <>
+      <section className="container flex flex-col gap-8 md:flex-row md:gap-16 py-8 md:py-16">
+        <div>
+          <SectionTitle align="md:text-left">{title}</SectionTitle>
+          <SectionDescription>{text}</SectionDescription>
         </div>
-      ) : null}
-    </div>
+        {image ? (
+          <div className="w-full md:w-52 h-52 md:h-auto bg-gray-300 flex-shrink-0">
+            <img
+              className="w-full h-full object-cover"
+              src={image}
+              alt={title}
+            />
+          </div>
+        ) : null}
+      </section>
+    </>
   );
 };
 
