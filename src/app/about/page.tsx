@@ -6,11 +6,12 @@ import SectionTitle from "../components/common/SectionTitle";
 import SectionDescription from "../components/common/SectionDescription";
 import {Suspense} from "react";
 import Modal from "../components/common/Modal";
+import Timeline from "../components/about/Timeline";
 
 export default function About() {
    return (
       <div>
-         <section className="container py-6">
+         <section className="container pb-6  pt-12">
             <div>
                <SectionTitle align="text-center">O que é o DevFest?</SectionTitle>
                <SectionDescription>
@@ -43,7 +44,10 @@ export default function About() {
             </Suspense>
          </section>
 
-         <section className="container"></section>
+         <section className="container pt-4 pb-28">
+            <SectionTitle align="text-center">Histório dos DevFests</SectionTitle>
+            <Timeline />
+         </section>
       </div>
    );
 }

@@ -42,7 +42,7 @@ export const Navbar = () => {
                ))}
             </ul>
             <div className="md:hidden">
-               <h2 className="font-bold font-lg" onClick={toggle}>
+               <h2 className="font-bold font-lg cursor-pointer" onClick={toggle}>
                   Dev Fest 2024
                </h2>
             </div>
