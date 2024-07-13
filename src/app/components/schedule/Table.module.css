@@ -1,0 +1,13 @@
+thead.sticky_header th {
+    position: -webkit-sticky;
+    position: sticky;
+    top: -1px;
+    background-color: #f4f4f5;
+    transition: 2s;
+}
+  
+thead.sticky_header th {
+    border: 0; 
+    outline: 1px solid #d4d4d8;
+}
+  

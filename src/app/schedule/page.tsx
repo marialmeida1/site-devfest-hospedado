@@ -1,3 +1,13 @@
+import SectionTitle from "../components/common/SectionTitle";
+import Table from "../components/schedule/Table";
+
 export default function Schedule() {
-   return <p>Página sobre a programação do evento.</p>;
+   return (
+      <section className="container py-12">
+         <SectionTitle align="text-center">
+            Programação
+         </SectionTitle>
+         <Table/>
+      </section>
+   );
 }
