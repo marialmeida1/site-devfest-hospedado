@@ -74,7 +74,7 @@ export default function TableLine() {
             j >= 1 ? (
               <td
                 key={j}
-                className="py-10 h-80 px-2 text-left border border-zinc-300 space-y-4"
+                className="py-10 h-80 px-2 text-left border border-zinc-300 space-y-4 hidden md:table-cell"
                 colSpan={el.colspan}
               >
                 {Array.from({ length: el.div }).map((_, k) => (

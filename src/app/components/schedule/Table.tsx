@@ -7,14 +7,15 @@ export default function Table() {
       <thead className={`${styles["sticky_header"]}`}>
         <tr>
           <th className="py-4 px-2 text-left">Início</th>
-          <th className="py-4 px-2 text-left">Trilha Dev</th>
-          <th className="py-4 px-2 text-left">Trilha IA</th>
-          <th className="py-4 px-2 text-left">Sala Carreira</th>
-          <th className="py-4 px-2 text-left">Workshop</th>
+          <th className="py-4 px-2 text-left hidden md:table-cell">Trilha Dev</th>
+          <th className="py-4 px-2 text-left hidden md:table-cell">Trilha IA</th>
+          <th className="py-4 px-2 text-left hidden md:table-cell">Sala Carreira</th>
+          <th className="py-4 px-2 text-left hidden md:table-cell">Workshop</th>
+          <th className="py-4 px-2 text-left md:hidden" colSpan={4}>Evento</th>
         </tr>
       </thead>
-      <tbody>
-        <TableLine />
+      <tbody className="">
+        <TableLine/>
       </tbody>
     </table>
   );
