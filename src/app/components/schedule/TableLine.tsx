@@ -71,14 +71,28 @@ export default function TableLine() {
       {lines.map((el, i) => (
         <tr key={i}>
           {Array.from({ length: el.td }).map((_, j) =>
-            j >= 1? (
-              <td key={j} className="py-8 px-2 text-left border border-zinc-300 space-y-4" colSpan={el.colspan}>
-                {Array.from({ length: el.div }).map((_, k) =>
-                    <TableCel id_line={i+1} id_col={j} rep={k+1}/>
-                )}
+            j >= 1 ? (
+              <td
+                key={j}
+                className="py-10 h-80 px-2 text-left border border-zinc-300 space-y-4"
+                colSpan={el.colspan}
+              >
+                {Array.from({ length: el.div }).map((_, k) => (
+                  <TableCel
+                    key={`line-${i}-col-${j}-rep-${k}`}
+                    id_line={i + 1}
+                    id_col={j}
+                    rep={k + 1}
+                  />
+                ))}
               </td>
             ) : (
-              <td key={j} className="py-8 px-2 text-left border border-zinc-300">{el.hourly}</td>
+              <td
+                key={`line-${i}-hourly`}
+                className="py-8 px-2 text-left border border-zinc-300"
+              >
+                {el.hourly}
+              </td>
             )
           )}
         </tr>

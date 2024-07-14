@@ -1,4 +1,8 @@
 import React from "react";
+
+import { faCircleInfo } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 import LevelButton from "./LevelButton";
 
 interface TableInfo {
@@ -244,7 +248,10 @@ export default function TableCel({ id_line, id_col, rep }: Props) {
           (el) => el.id_line === id_line && el.id_col === id_col && rep === 1
         )
         .map((el, i) => (
-          <div key={i} className="p-4 bg-zinc-50 rounded-md flex flex-col gap-2 shadow">
+          <div
+            key={i}
+            className="p-4 bg-zinc-50 rounded-md flex flex-col gap-2 shadow"
+          >
             <div className="w-fit flex flex-row text-xs text-zinc-800 border border-zinc-800 rounded-full px-2 py-0.5">
               {el.hourly_start} - {el.hourly_end}
             </div>
@@ -252,9 +259,10 @@ export default function TableCel({ id_line, id_col, rep }: Props) {
             <h1 className="text-sm font-bold">{el.speaker}</h1>
 
             <div className="mt-4 flex flex-row justify-between">
-              {el.level ? (<LevelButton level={el.level}/>) : null}
-              <div className="w-fit flex flex-row text-xs text-zinc-800 border border-zinc-800 rounded-full px-2 py-0.5">
-                Info
+              {el.level ? <LevelButton level={el.level} /> : null}
+              <div className="cursor-pointer w-fit gap-1 flex flex-row items-center text-xs text-zinc-800 border border-zinc-800 rounded-full px-2 py-0.5">
+                <p>Info</p>
+                <FontAwesomeIcon icon={faCircleInfo} className="h-3" />
               </div>
             </div>
           </div>
