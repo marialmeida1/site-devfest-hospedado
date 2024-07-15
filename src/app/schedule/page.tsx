@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { useState } from "react";
 import SectionTitle from "../components/common/SectionTitle";
 import Table from "../components/schedule/Table";
@@ -16,31 +16,40 @@ const hourly: string[] = [
 ];
 
 export default function Schedule() {
-  const [selectedValue, setSelectedValue] = useState("");
+  const [selectedValueHourly, setSelectedValueHourly] = useState<number>(0);
 
-  const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    setSelectedValue(event.target.value);
+  const handleChangeHourly = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    setSelectedValueHourly(Number(event.target.value));
   };
 
   return (
-    <section className="container py-12">
+    <section className="container md:py-8 min-h-screen">
       <SectionTitle align="text-center">Programação</SectionTitle>
-      <div className="py-2 w-full md">
+
+
+      <div className="py-2 w-full md:hidden flex flex-row gap-2">
         <select
           name="hourly"
-          value={selectedValue}
-          onChange={handleChange}
-          className="px-2 py-1 w-full text-zinc-600 bg-zinc-100 border border-zinc-300 rounded "
+          value={selectedValueHourly}
+          onChange={handleChangeHourly}
+          className="px-2 py-1.5 w-full text-zinc-600 text-sm bg-zinc-50 border border-zinc-300 rounded "
         >
           <option value="" disabled hidden>
-            Selecione o horário
+            Horário
           </option>
+          <option value="0">Todos</option>
           {hourly.map((el, i) => (
-            <option key={i} value={i}>{el}</option>
+            <option key={i + 1} value={i + 1}>
+              {el}
+            </option>
           ))}
         </select>
+
       </div>
-      <Table />
+
+      <Table
+        selectHourly={selectedValueHourly}
+      />
     </section>
   );
 }

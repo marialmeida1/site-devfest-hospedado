@@ -234,13 +234,22 @@ const infos: TableInfo[] = [
   },
 ];
 
+const trails: string[] = [
+  "Trilha Dev",
+  "Trilha IA",
+  "Sala Carreira",
+  "Workshop",
+  "Sem categoria",
+];
+
 interface Props {
   id_line: number;
   id_col: number;
   rep: number;
+  trail: number;
 }
 
-export default function TableCel({ id_line, id_col, rep }: Props) {
+export default function TableCel({ id_line, id_col, rep, trail }: Props) {
   return (
     <>
       {infos
@@ -250,13 +259,22 @@ export default function TableCel({ id_line, id_col, rep }: Props) {
         .map((el, i) => (
           <div
             key={i}
-            className="p-4 bg-zinc-50 rounded-md flex flex-col gap-2 shadow"
+            className="p-4 bg-zinc-50 rounded-md flex flex-col gap-2 shadow border"
           >
+            {trails
+              .filter((_, i) => i + 1 === trail)
+              .map((el, index) => (
+                 (trail == 5 ? null :  <div className="font-black rounded text-zinc-600">{el}</div>)
+              ))}
+
             <div className="w-fit flex flex-row text-xs text-zinc-800 border border-zinc-800 rounded-full px-2 py-0.5">
               {el.hourly_start} - {el.hourly_end}
             </div>
-            <h2 className="text-sm">{el.name}</h2>
-            <h1 className="text-sm font-bold">{el.speaker}</h1>
+
+            <div className="space-y-1">
+              <h2 className="text-xs text-zinc-700">{el.speaker}</h2>
+              <h1 className="text-sm font-bold">{el.name}</h1>
+            </div>
 
             <div className="mt-4 flex flex-row justify-between">
               {el.level ? <LevelButton level={el.level} /> : null}
