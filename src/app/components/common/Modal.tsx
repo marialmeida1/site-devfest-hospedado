@@ -1,36 +1,52 @@
-"use client";
-import { useSearchParams, usePathname } from "next/navigation";
-import Link from "next/link";
+import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
-import { ReactNode } from "react";
 import { faX } from "@fortawesome/free-solid-svg-icons";
 
-interface Props {
-  children: ReactNode;
+interface ModalProps {
+  isOpen: boolean;
+  onClose: () => void;
+  image?: boolean;
+  children: React.ReactNode;
 }
 
-function Modal({ children }: Props) {
-  const searchParams = useSearchParams();
-  const modal = searchParams.get("modal");
-  const pathname = usePathname();
+const Modal: React.FC<ModalProps> = ({
+  isOpen,
+  onClose,
+  image,
+  children,
+}) => {
+  if (!isOpen) return null;
 
-  return (
-    <>
-      {modal && (
-          <dialog className="fixed left-0 top-0 w-full h-full bg-black bg-opacity-50 z-50 overflow-auto backdrop-blur flex justify-center items-center p-4">
-            <div className="relative">
-              <Link href={pathname} className="absolute right-0 m-2">
-                <div className="bg-white rounded-full w-8 h-8 flex justify-center items-center">
-                  <FontAwesomeIcon icon={faX} className="h-4" />
-                </div>
-              </Link>
-              <div className="flex flex-col items-center">{children}</div>
-            </div>
-          </dialog>
-      )}
-    </>
+  return image ? (
+    <div className="fixed inset-0 bg-black bg-opacity-50 z-50 overflow-auto flex justify-center items-center p-4">
+      <div className="relative min-h-[calc(60%)] min-w-[calc(20%)] max-w-[calc(60%)]">
+        <div className="flex items-center justify-end absolute right-0 m-2">
+          <button onClick={onClose} className="cursor-pointer">
+            <FontAwesomeIcon
+              icon={faX}
+              className="h-4 text-zinc-600 bg-white hover:bg-zinc-200 hover:text-zinc-700 rounded p-2"
+            />
+          </button>
+        </div>
+        <div >{children}</div>
+      </div>
+    </div>
+  ) : (
+    <div className="fixed inset-0 bg-black bg-opacity-50 z-50 overflow-auto flex justify-center items-center p-4">
+      <div className="relative bg-white p-4 mx-10 rounded-md md:inset-0 min-h-[calc(60%)] min-w-[calc(20%)] max-w-[calc(60%)]">
+        <div className="flex items-center justify-between px-2 pb-2 pt-1 border-b rounded-t">
+          <h1 className="text-xl font-semibold text-zinc-900">Detalhes</h1>
+          <button onClick={onClose} className="p-2 cursor-pointer">
+            <FontAwesomeIcon
+              icon={faX}
+              className="h-4 text-zinc-300 hover:bg-zinc-200 hover:text-zinc-700 rounded p-2"
+            />
+          </button>
+        </div>
+        <div className="p-4 md:p-5 space-y-4">{children}</div>
+      </div>
+    </div>
   );
-}
+};
 
 export default Modal;

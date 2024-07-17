@@ -1,12 +1,10 @@
-import React, { Suspense, useState } from "react";
-import Image from "next/image";
+import React, { useState } from "react";
 
-import { faCircleInfo, faX } from "@fortawesome/free-solid-svg-icons";
+import { faCircleInfo } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import LevelButton from "./LevelButton";
-import Link from "next/link";
-import Modal from "../common/Modal";
+import InfoModal from "../common/Modal";
 
 interface TableInfo {
   id_line: number;
@@ -16,7 +14,6 @@ interface TableInfo {
   name: string;
   speaker: string;
   level: string;
-  showMe: boolean;
 }
 
 const infos: TableInfo[] = [
@@ -27,7 +24,6 @@ const infos: TableInfo[] = [
     hourly_end: "8:50",
     name: "Credenciamento + Coffe",
     speaker: "Palestrante",
-    showMe: false,
     level: "Iniciante",
   },
   {
@@ -37,7 +33,6 @@ const infos: TableInfo[] = [
     hourly_end: "9:00",
     name: "Abertura",
     speaker: "Palestrante",
-    showMe: false,
     level: "Iniciante",
   },
   {
@@ -47,7 +42,6 @@ const infos: TableInfo[] = [
     hourly_end: "9:50",
     name: "Palestra Abertura",
     speaker: "Palestrante",
-    showMe: false,
     level: "Intermediário",
   },
   {
@@ -57,7 +51,6 @@ const infos: TableInfo[] = [
     hourly_end: "10:00",
     name: "Tempo de Transição",
     speaker: "Palestrante",
-    showMe: false,
     level: "Iniciante",
   },
   {
@@ -67,7 +60,6 @@ const infos: TableInfo[] = [
     hourly_end: "10:50",
     name: "Palestra 1",
     speaker: "Palestrante",
-    showMe: false,
     level: "Iniciante",
   },
   {
@@ -77,7 +69,6 @@ const infos: TableInfo[] = [
     hourly_end: "10:50",
     name: "Palestra 2",
     speaker: "Palestrante",
-    showMe: false,
     level: "Avançado",
   },
   {
@@ -87,7 +78,6 @@ const infos: TableInfo[] = [
     hourly_end: "10:50",
     name: "Palestra 3",
     speaker: "Palestrante",
-    showMe: false,
     level: "Iniciante",
   },
   {
@@ -97,7 +87,6 @@ const infos: TableInfo[] = [
     hourly_end: "10:50",
     name: "Workshop 1",
     speaker: "Palestrante",
-    showMe: false,
     level: "Iniciante",
   },
   {
@@ -107,7 +96,6 @@ const infos: TableInfo[] = [
     hourly_end: "11:40",
     name: "Palestra 1",
     speaker: "Palestrante",
-    showMe: false,
     level: "Iniciante",
   },
   {
@@ -117,7 +105,6 @@ const infos: TableInfo[] = [
     hourly_end: "11:40",
     name: "Palestra 2",
     speaker: "Palestrante",
-    showMe: false,
     level: "Iniciante",
   },
   {
@@ -127,7 +114,6 @@ const infos: TableInfo[] = [
     hourly_end: "11:40",
     name: "Palestra 3",
     speaker: "Palestrante",
-    showMe: false,
     level: "Iniciante",
   },
   {
@@ -137,7 +123,6 @@ const infos: TableInfo[] = [
     hourly_end: "11:40",
     name: "Workshop 1",
     speaker: "Palestrante",
-    showMe: false,
     level: "Iniciante",
   },
   {
@@ -147,7 +132,6 @@ const infos: TableInfo[] = [
     hourly_end: "13:20",
     name: "Almoço",
     speaker: "Palestrante",
-    showMe: false,
     level: "",
   },
   {
@@ -157,7 +141,6 @@ const infos: TableInfo[] = [
     hourly_end: "14:10",
     name: "Palestra 1",
     speaker: "Palestrante",
-    showMe: false,
     level: "Iniciante",
   },
   {
@@ -167,7 +150,6 @@ const infos: TableInfo[] = [
     hourly_end: "14:10",
     name: "Palestra 2",
     speaker: "Palestrante",
-    showMe: false,
     level: "Iniciante",
   },
   {
@@ -177,7 +159,6 @@ const infos: TableInfo[] = [
     hourly_end: "14:10",
     name: "Palestra 3",
     speaker: "Palestrante",
-    showMe: false,
     level: "Iniciante",
   },
   {
@@ -187,7 +168,6 @@ const infos: TableInfo[] = [
     hourly_end: "14:10",
     name: "Workshop 2",
     speaker: "Palestrante",
-    showMe: false,
     level: "Iniciante",
   },
   {
@@ -197,7 +177,6 @@ const infos: TableInfo[] = [
     hourly_end: "15:50",
     name: "Palestra 1",
     speaker: "Palestrante",
-    showMe: false,
     level: "Iniciante",
   },
   {
@@ -207,7 +186,6 @@ const infos: TableInfo[] = [
     hourly_end: "15:50",
     name: "Palestra 2",
     speaker: "Palestrante",
-    showMe: false,
     level: "Iniciante",
   },
   {
@@ -217,7 +195,6 @@ const infos: TableInfo[] = [
     hourly_end: "15:50",
     name: "Palestra 3",
     speaker: "Palestrante",
-    showMe: false,
     level: "Iniciante",
   },
   {
@@ -227,7 +204,6 @@ const infos: TableInfo[] = [
     hourly_end: "15:50",
     name: "Workshop 2",
     speaker: "Palestrante",
-    showMe: false,
     level: "Iniciante",
   },
   {
@@ -237,7 +213,6 @@ const infos: TableInfo[] = [
     hourly_end: "16:40",
     name: "Palestra Encerramento",
     speaker: "Palestrante",
-    showMe: false,
     level: "Iniciante",
   },
   {
@@ -247,7 +222,6 @@ const infos: TableInfo[] = [
     hourly_end: "17:20",
     name: "Encerramento + Sorteio + Foto Oficial",
     speaker: "Palestrante",
-    showMe: false,
     level: "Iniciante",
   },
   {
@@ -257,7 +231,6 @@ const infos: TableInfo[] = [
     hourly_end: "18:30",
     name: "Happy Hour",
     speaker: "Palestrante",
-    showMe: false,
     level: "Iniciante",
   },
 ];
@@ -278,13 +251,14 @@ interface Props {
 }
 
 export default function TableCel({ id_line, id_col, rep, trail }: Props) {
-  const [showMe, setShowMe] = useState<{ [key: number]: boolean }>({});
+  const [selectedInfo, setSelectedInfo] = useState<TableInfo | null>(null);
 
-  const toggle = (i: number) => {
-    setShowMe((prevState) => ({
-      ...prevState,
-      [i]: !prevState[i],
-    }));
+  const openModal = (info: TableInfo) => {
+    setSelectedInfo(info);
+  };
+
+  const closeModal = () => {
+    setSelectedInfo(null);
   };
 
   return (
@@ -298,95 +272,67 @@ export default function TableCel({ id_line, id_col, rep, trail }: Props) {
             key={i}
             className="p-4 bg-zinc-50 rounded-md flex flex-col gap-2 shadow border"
           >
-            {trails
-              .filter((_, i) => i + 1 === trail)
-              .map((el, index) =>
-                trail == 5 ? null : (
-                  <div key={index} className="font-black rounded text-zinc-600">
-                    {el}
-                  </div>
-                )
-              )}
-
+            {trails[trail - 1] && trail !== 5 && (
+              <div className="font-black rounded text-zinc-600">
+                {trails[trail - 1]}
+              </div>
+            )}
             <div className="w-fit flex flex-row text-xs text-zinc-800 border border-zinc-800 rounded-full px-2 py-0.5">
               {el.hourly_start} - {el.hourly_end}
             </div>
-
             <div className="space-y-1">
               <h2 className="text-xs text-zinc-700">{el.speaker}</h2>
               <h1 className="text-sm font-bold">{el.name}</h1>
             </div>
-
             <div className="mt-4 flex flex-row justify-between">
-              {el.level ? <LevelButton level={el.level} /> : null}
+              {el.level && <LevelButton level={el.level} />}
               <div
-                onClick={() => toggle(i)}
+                onClick={() => openModal(el)}
                 className="cursor-pointer w-fit gap-1 flex flex-row items-center text-xs text-zinc-800 border border-zinc-800 rounded-full px-2 py-0.5"
               >
                 <p>Info</p>
                 <FontAwesomeIcon icon={faCircleInfo} className="h-3" />
               </div>
-
-              <div
-                className={`${
-                  showMe[i] ? "block" : "hidden"
-                } fixed left-0 top-0 w-full h-full bg-black bg-opacity-50 z-50 overflow-auto backdrop-blur flex justify-center items-center p-4`}
-              >
-                <div className="relative bg-white p-4 mx-10 rounded-md w-full md:inset-0 min-h-[calc(60%)] ">
-                  <div className="flex items-center justify-between p-4 md:p-5 border-b rounded-t">
-                    <h1 className="text-xl font-semibold text-zinc-900">
-                      {el.name}
-                    </h1>
-
-                    <div
-                      onClick={() => toggle(i)}
-                      className="p-2 cursor-pointer h-8 flex justify-center items-center"
-                    >
-                      <FontAwesomeIcon
-                        icon={faX}
-                        className="h-4 text-zinc-300 hover:bg-zinc-200 hover:text-zinc-700 rounded p-2"
-                      />
-                    </div>
-                  </div>
-
-                  <div className="p-4 md:p-5 space-y-4">
-                    <p className="text-base leading-relaxed text-zinc-500">
-                      Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                      Doloremque, molestias officia? Pariatur culpa vero
-                      voluptatum voluptates, delectus, obcaecati totam officiis
-                      itaque veniam corporis ipsum veritatis, aspernatur
-                      mollitia repellat rerum explicabo.
-                    </p>
-
-                    <ul>
-                      <li className="text-base leading-relaxed text-zinc-500">
-                        <span className="text-base text-zinc-700 font-bold">
-                          Palestrante:{" "}
-                        </span>
-                        {el.speaker}
-                      </li>
-                      <li className="text-base leading-relaxed text-zinc-500">
-                        <span className="text-base text-zinc-700 font-bold">
-                          Horário Início:{" "}
-                        </span>
-                        {el.hourly_start}
-                      </li>
-                      <li className="text-base leading-relaxed text-zinc-500">
-                        <span className="text-base text-zinc-700 font-bold">
-                          Horário Término:{" "}
-                        </span>
-                        {el.hourly_end}
-                      </li>
-                      <li className="text-base leading-relaxed text-zinc-500">
-                        <span className="text-base text-zinc-700 font-bold">
-                          Nível:{" "}
-                        </span>
-                        {el.level}
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
+              {selectedInfo && (
+                <InfoModal isOpen={!!selectedInfo} onClose={closeModal}>
+                  <h1 className="text-xl font-semibold text-zinc-900">
+                    {selectedInfo.name}
+                  </h1>
+                  <p className="text-base leading-relaxed text-zinc-500">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                    Doloremque, molestias officia? Pariatur culpa vero
+                    voluptatum voluptates, delectus, obcaecati totam officiis
+                    itaque veniam corporis ipsum veritatis, aspernatur mollitia
+                    repellat rerum explicabo.
+                  </p>
+                  <ul>
+                    <li className="text-base leading-relaxed text-zinc-500">
+                      <span className="text-base text-zinc-700 font-bold">
+                        Palestrante:{" "}
+                      </span>
+                      {selectedInfo.speaker}
+                    </li>
+                    <li className="text-base leading-relaxed text-zinc-500">
+                      <span className="text-base text-zinc-700 font-bold">
+                        Horário Início:{" "}
+                      </span>
+                      {selectedInfo.hourly_start}
+                    </li>
+                    <li className="text-base leading-relaxed text-zinc-500">
+                      <span className="text-base text-zinc-700 font-bold">
+                        Horário Término:{" "}
+                      </span>
+                      {selectedInfo.hourly_end}
+                    </li>
+                    <li className="text-base leading-relaxed text-zinc-500">
+                      <span className="text-base text-zinc-700 font-bold">
+                        Nível:{" "}
+                      </span>
+                      {selectedInfo.level}
+                    </li>
+                  </ul>
+                </InfoModal>
+              )}
             </div>
           </div>
         ))}

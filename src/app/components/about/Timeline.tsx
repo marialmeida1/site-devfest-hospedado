@@ -1,44 +1,52 @@
 import Image from "next/image";
 import styles from "./Timeline.module.css";
 
+interface Events {
+  title: string;
+  year: string;
+  description: string;
+  image: string;
+}
+
+const events: Events[] = [
+  {
+    title: "DevFest 2015",
+    year: "2015",
+    description:
+      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, dolorum hic? Molestiae illo accusamus esse.",
+    image: "/img/devfest/Devfest2015.png",
+  },
+  {
+    title: "DevFest 2016",
+    year: "2016",
+    description:
+      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, dolorum hic? Molestiae illo accusamus esse.",
+    image: "/img/devfest/Devfest2016.png",
+  },
+  {
+    title: "DevFest 2017",
+    year: "2017",
+    description:
+      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, dolorum hic? Molestiae illo accusamus esse.",
+    image: "/img/devfest/DevFest2017.jpg",
+  },
+  {
+    title: "DevFest 2018",
+    year: "2018",
+    description:
+      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, dolorum hic? Molestiae illo accusamus esse.",
+    image: "/img/devfest/Devfest2018.jpg",
+  },
+  {
+    title: "DevFest 2023",
+    year: "2023",
+    description:
+      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, dolorum hic? Molestiae illo accusamus esse.",
+    image: "/img/devfest/DevFest2023.jpg",
+  },
+];
+
 export default function Timeline() {
-  const events = [
-    {
-      title: "DevFest 2015",
-      year: "2015",
-      description:
-        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, dolorum hic? Molestiae illo accusamus esse.",
-      image: "/img/devfest/Devfest2015.png",
-    },
-    {
-      title: "DevFest 2016",
-      year: "2016",
-      description:
-        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, dolorum hic? Molestiae illo accusamus esse.",
-      image: "/img/devfest/Devfest2016.png",
-    },
-    {
-      title: "DevFest 2017",
-      year: "2017",
-      description:
-        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, dolorum hic? Molestiae illo accusamus esse.",
-      image: "/img/devfest/DevFest2017.jpg",
-    },
-    {
-      title: "DevFest 2018",
-      year: "2018",
-      description:
-        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, dolorum hic? Molestiae illo accusamus esse.",
-      image: "/img/devfest/Devfest2018.jpg",
-    },
-    {
-      title: "DevFest 2023",
-      year: "2023",
-      description:
-        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, dolorum hic? Molestiae illo accusamus esse.",
-      image: "/img/devfest/DevFest2023.jpg",
-    },
-  ];
 
   return (
     <div className="gap-8 my-8 flex flex-col border-l-2 border-gray-900 lg:border-l-0 lg:flex-row lg:border-b-2 lg:border-gray-900">
@@ -50,13 +58,13 @@ export default function Timeline() {
 
           <div className="w-full h-40 flex items-center justify-center pl-4 lg:pl-0 lg:pb-12">
             <div className="relative w-40 h-40">
-              <Image
-                className="absolute inset-0 w-full h-full object-cover"
-                src={el.image}
-                alt={el.title}
-                fill={true}
-                sizes="200px, 150px"
-              />
+                <Image
+                  className="absolute inset-0 w-full h-full object-cover"
+                  src={el.image}
+                  alt={el.title}
+                  fill={true}
+                  sizes="200px, 150px"
+                />
             </div>
           </div>
 

@@ -32,11 +32,8 @@ export default function Schedule() {
           name="hourly"
           value={selectedValueHourly}
           onChange={handleChangeHourly}
-          className="px-2 py-1.5 w-full text-zinc-600 text-sm bg-zinc-50 border border-zinc-300 rounded "
+          className="px-2 py-1.5 w-full text-zinc-600 text-sm bg-zinc-50 border border-zinc-300 rounded"
         >
-          <option value="" disabled hidden>
-            Horário
-          </option>
           <option value="0">Todos</option>
           {hourly.map((el, i) => (
             <option key={i + 1} value={i + 1}>
