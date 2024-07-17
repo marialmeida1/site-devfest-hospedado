@@ -26,7 +26,7 @@ export default function About() {
 
          <section className="container flex flex-col gap-8 md:flex-row md:gap-16 py-8 md:py-16">
             <div>
-               <SectionTitle align="md:text-left">O que é o GDG?</SectionTitle>
+               <SectionTitle align="md:text-left text-center">O que é o GDG?</SectionTitle>
                <SectionDescription>
                   O que é o GDG: Somos o Google Developer Groups de Belo Horizonte (GDG BH), uma comunidade apaixonada por tecnologia que se reúne para aprender, compartilhar e construir juntos. Como parte da rede global GDG, fazemos parte de uma comunidade com mais de 10.000 grupos em mais de 170 países, oferecendo
                   uma ampla variedade de eventos e atividades emocionantes, incluindo meetups, hackathons, workshops e conferências.

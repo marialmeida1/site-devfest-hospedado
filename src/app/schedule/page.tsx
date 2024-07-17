@@ -1,7 +1,8 @@
 "use client";
-import { useState } from "react";
+import { Suspense, useState } from "react";
 import SectionTitle from "../components/common/SectionTitle";
 import Table from "../components/schedule/Table";
+import Modal from "../components/common/Modal";
 
 const hourly: string[] = [
   "8:00",
@@ -26,7 +27,6 @@ export default function Schedule() {
     <section className="container md:py-8 min-h-screen">
       <SectionTitle align="text-center">Programação</SectionTitle>
 
-
       <div className="py-2 w-full md:hidden flex flex-row gap-2">
         <select
           name="hourly"
@@ -44,12 +44,10 @@ export default function Schedule() {
             </option>
           ))}
         </select>
-
       </div>
 
-      <Table
-        selectHourly={selectedValueHourly}
-      />
+      <Table selectHourly={selectedValueHourly} />
+
     </section>
   );
 }
