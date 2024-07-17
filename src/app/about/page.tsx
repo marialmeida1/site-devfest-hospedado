@@ -19,8 +19,9 @@ export default function About() {
   };
 
   return (
-    <div>
-      <section className="container pb-6  pt-12">
+    <>
+      {/* O que é o DevFest */}
+      <section className="container pt-2">
         <div>
           <SectionTitle align="text-center">O que é o DevFest?</SectionTitle>
           <SectionDescription>
@@ -37,7 +38,8 @@ export default function About() {
         </div>
       </section>
 
-      <section className="container flex flex-col gap-8 md:flex-row md:gap-16 py-8 md:py-16">
+      {/* O que é o GDG */}
+      <section className="container flex flex-col gap-8 md:flex-row md:gap-16 py-6">
         <div>
           <SectionTitle align="md:text-left text-center">
             O que é o GDG?
@@ -73,10 +75,11 @@ export default function About() {
         )}
       </section>
 
-      <section className="container pt-4 pb-28">
+      {/* Timeline */}
+      <section className="container pt-2 pb-14">
         <SectionTitle align="text-center">Histório dos DevFests</SectionTitle>
         <Timeline />
       </section>
-    </div>
+    </>
   );
 }

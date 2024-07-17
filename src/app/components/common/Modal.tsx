@@ -19,7 +19,7 @@ const Modal: React.FC<ModalProps> = ({
 
   return image ? (
     <div className="fixed inset-0 bg-black bg-opacity-50 z-50 overflow-auto flex justify-center items-center p-4">
-      <div className="relative min-h-[calc(60%)] min-w-[calc(20%)] max-w-[calc(60%)]">
+      <div className="relative">
         <div className="flex items-center justify-end absolute right-0 m-2">
           <button onClick={onClose} className="cursor-pointer">
             <FontAwesomeIcon
@@ -33,7 +33,7 @@ const Modal: React.FC<ModalProps> = ({
     </div>
   ) : (
     <div className="fixed inset-0 bg-black bg-opacity-50 z-50 overflow-auto flex justify-center items-center p-4">
-      <div className="relative bg-white p-4 mx-10 rounded-md md:inset-0 min-h-[calc(60%)] min-w-[calc(20%)] max-w-[calc(60%)]">
+      <div className="relative bg-white p-4 m-2 w-full min-h-fit rounded-md md:inset-0 md:m-0 md:min-w-[calc(20%)] md:max-w-[calc(60%)]">
         <div className="flex items-center justify-between px-2 pb-2 pt-1 border-b rounded-t">
           <h1 className="text-xl font-semibold text-zinc-900">Detalhes</h1>
           <button onClick={onClose} className="p-2 cursor-pointer">

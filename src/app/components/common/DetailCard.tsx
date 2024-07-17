@@ -1,13 +1,7 @@
 import React from "react";
-
-import Link from "next/link";
-import Image from "next/image";
-
 import SectionTitle from "./SectionTitle";
 import SectionDescription from "./SectionDescription";
-import Modal from "./Modal";
 
-import { Suspense } from "react";
 
 interface DetailProps {
   title: string;
