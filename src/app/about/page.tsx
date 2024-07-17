@@ -1,6 +1,5 @@
 "use client";
 import Image from "next/image";
-import ImagesDevFest from "../components/about/ImagesDevFest";
 import SectionTitle from "../components/common/SectionTitle";
 import SectionDescription from "../components/common/SectionDescription";
 import { useState } from "react";
@@ -32,9 +31,6 @@ export default function About() {
             de tecnologia. Eles oferecem uma variedade de atividades, incluindo
             palestras técnicas, workshops e oportunidades de networking.
           </SectionDescription>
-        </div>
-        <div>
-          <ImagesDevFest />
         </div>
       </section>
 

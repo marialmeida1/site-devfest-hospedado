@@ -1,8 +1,7 @@
 "use client";
-import { Suspense, useState } from "react";
+import { useState } from "react";
 import SectionTitle from "../components/common/SectionTitle";
 import Table from "../components/schedule/Table";
-import Modal from "../components/common/Modal";
 
 const hourly: string[] = [
   "8:00",
