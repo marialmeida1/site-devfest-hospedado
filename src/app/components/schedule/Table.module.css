@@ -1,0 +1,9 @@
+.sticky_header th {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  background-color: #f4f4f5;
+  transition: 2s;
+  border: 0;
+  outline: 1px solid #d4d4d8;
+}
