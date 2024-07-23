@@ -1,4 +1,5 @@
 import CountdownTimer from "./components/home/CountdownTimer";
+import HomeButton from "./components/home/HomeButton";
 
 export default function Home() {
    return (
@@ -11,7 +12,7 @@ export default function Home() {
                   Phasellus sapien elit, dapibus ut lectus quis, tincidunt 
                   congue ex.
                </p>
-               <a href="#" className="bg-white px-1.5 py-1 rounded-lg hover:bg-[#1e1e1e] hover:text-white">Inscrever-se</a>
+               <HomeButton text="Inscrever-se" />
             </div>
          </section>
          <CountdownTimer />
