@@ -12,22 +12,22 @@ export default function ParticipantCarousel() {
 
     const cards = [
         {
-            key: "Titulo 1",
-            title: "Título 1",
+            key: "Card 1",
+            title: "Lorem ipsum dolor.",
             description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sapien elit, dapibus ut lectus quis, tincidunt congue ex. Lorem ipsum",
             instagramLink: "https://www.instagram.com/",
             websiteLink: "https://www.google.com/"
         },
         {
-            key: "Titulo 2",
-            title: "Titulo 2",
+            key: "Card 2",
+            title: "Lorem ipsum dolor.",
             description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sapien elit, dapibus ut lectus quis, tincidunt congue ex. Lorem ipsum",
             instagramLink: "https://www.instagram.com/",
             websiteLink: "https://www.google.com/"
         },
         {
-            key: "Titulo 3",
-            title: "Titulo 3",
+            key: "Card 3",
+            title: "Lorem ipsum dolor.",
             description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sapien elit, dapibus ut lectus quis, tincidunt congue ex. Lorem ipsum",
             instagramLink: "https://www.instagram.com/",
             websiteLink: "https://www.google.com/"

@@ -17,7 +17,7 @@ export default function ParticipantCard({
         <div className="min-w-64 max-w-64 h-[372px] rounded-lg flex flex-col">
             <div className="h-2/5 bg-[#7B7B7B] rounded-lg"></div>
             <div className="py-4 h-3/5 px-4 bg-white">
-                <h1 className="font-black text-xl">{title}</h1>
+                <h1 className="font-black text-xl pb-2">{title}</h1>
                 <p className="text-sm text-justify">
                     {description}
                 </p>
