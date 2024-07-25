@@ -28,7 +28,8 @@ const calculateTimeRemaining = (targetDate: Date): TimeRemaining => {
 
 export default function CountdownTimer() {
     const targetDate = useMemo(() => new Date("2024-10-26T00:00:00-03:00"), []);
-    const [timeRemaining, setTimeRemaining] = useState<TimeRemaining>(calculateTimeRemaining(targetDate));
+    const [timeRemaining, setTimeRemaining] = useState<TimeRemaining | null>(null);
+    const [isMounted, setIsMounted] = useState(false);
 
     const calculateAndSetTimeRemaining = useCallback(() => {
         const time = calculateTimeRemaining(targetDate);
@@ -36,16 +37,19 @@ export default function CountdownTimer() {
     }, [targetDate]);
 
     useEffect(() => {
+        setIsMounted(true);
         const interval = setInterval(calculateAndSetTimeRemaining, 1000);
         return () => clearInterval(interval);
     }, [calculateAndSetTimeRemaining]);
 
+    if (!isMounted) return null;
+
     return (
         <section className="container py-9 overflow-hidden mx-auto flex justify-center items-center flex-wrap gap-9">
-            <CountdownElement remainingQuantity={timeRemaining.days} contentType="dias" />
-            <CountdownElement remainingQuantity={timeRemaining.hours} contentType="horas" />
-            <CountdownElement remainingQuantity={timeRemaining.minutes} contentType="minutos" />
-            <CountdownElement remainingQuantity={timeRemaining.seconds} contentType="segundos" />
+            <CountdownElement remainingQuantity={timeRemaining?.days || '00'} contentType="dias" />
+            <CountdownElement remainingQuantity={timeRemaining?.hours || '00'} contentType="horas" />
+            <CountdownElement remainingQuantity={timeRemaining?.minutes || '00'} contentType="minutos" />
+            <CountdownElement remainingQuantity={timeRemaining?.seconds || '00'} contentType="segundos" />
         </section>
     );
 }
