@@ -2,6 +2,7 @@ import SectionDescription from "./components/common/SectionDescription";
 import SectionTitle from "./components/common/SectionTitle";
 import CountdownTimer from "./components/home/CountdownTimer";
 import HomeButton from "./components/home/HomeButton";
+import ParticipantCarousel from "./components/home/ParticipantCarousel";
 
 export default function Home() {
    return (
@@ -44,6 +45,12 @@ export default function Home() {
                </div>
             </div>
          </section>
+         <div className="bg-[#F0F0F0]">
+            <section className="container py-8 ">
+               <SectionTitle align="text-center">Palestrantes</SectionTitle>
+               <ParticipantCarousel />
+            </section>
+         </div>
       </>
    );
 }
