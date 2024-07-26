@@ -3,6 +3,7 @@ import SectionTitle from "./components/common/SectionTitle";
 import CountdownTimer from "./components/home/CountdownTimer";
 import HomeButton from "./components/home/HomeButton";
 import ParticipantCarousel from "./components/home/ParticipantCarousel";
+import QuestionAccordion from "./components/home/QuestionAccordion";
 
 export default function Home() {
    return (
@@ -46,11 +47,26 @@ export default function Home() {
             </div>
          </section>
          <div className="bg-[#F0F0F0]">
-            <section className="container py-8 ">
+            <section className="container pt-8 pb-16">
                <SectionTitle align="text-center">Palestrantes</SectionTitle>
                <ParticipantCarousel />
             </section>
          </div>
+         <section className="container py-8">
+            <SectionTitle align="text-center">Dúvidas frequentes</SectionTitle>
+            <QuestionAccordion
+               question="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+               answer="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+            />
+            <QuestionAccordion
+               question="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+               answer="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+            />
+            <QuestionAccordion
+               question="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+               answer="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+            />
+         </section>
       </>
    );
 }
