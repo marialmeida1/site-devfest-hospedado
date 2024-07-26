@@ -2,7 +2,7 @@ import SectionDescription from "./components/common/SectionDescription";
 import SectionTitle from "./components/common/SectionTitle";
 import CountdownTimer from "./components/home/CountdownTimer";
 import HomeButton from "./components/home/HomeButton";
-import ParticipantCarousel from "./components/home/ParticipantCarousel";
+import SpeakerCarousel from "./components/home/SpeakerCarousel";
 import QuestionAccordion from "./components/home/QuestionAccordion";
 
 export default function Home() {
@@ -49,7 +49,7 @@ export default function Home() {
          <div className="bg-[#F0F0F0]">
             <section className="container pt-8 pb-16">
                <SectionTitle align="text-center">Palestrantes</SectionTitle>
-               <ParticipantCarousel />
+               <SpeakerCarousel />
             </section>
          </div>
          <section className="container py-8">
