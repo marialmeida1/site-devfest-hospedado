@@ -5,6 +5,7 @@ import HomeButton from "./components/home/HomeButton";
 import SpeakerCarousel from "./components/home/SpeakerCarousel";
 import QuestionAccordion from "./components/home/QuestionAccordion";
 import SponsorCarousel from "./components/home/SponsorCarousel";
+import { ArrowDown } from "lucide-react";
 
 export default function Home() {
    return (
@@ -74,6 +75,26 @@ export default function Home() {
                <SponsorCarousel />
             </section>
          </div>
+         <section className="container py-8 px-4 flex flex-col text-center sm:w-4/5 lg:w-full lg:flex-row lg:items-center">
+            <div className="h-full mb-10 lg:mb-0 lg:mr-10 lg:w-full lg:text-justify ">
+               <h1 className="text-3xl font-black py-4">Media Kit</h1>
+               <p className="font-medium lg:mr-24">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus 
+                  sapien elit, dapibus ut lectus quis, tincidunt congue ex. Lorem ipsum 
+                  dolor sit amet, consectetur adipiscing elit. Phasellus sapien elit, dapibus 
+                  ut lectus quis, tincidunt congue ex. Lorem ipsum dolor sit amet, consectetur 
+                  adipiscing elit. Phasellus sapien elit, dapibus ut lectus quis, tincidunt congue ex. 
+               </p>
+               <div className="h-8"></div>
+            </div>
+            <div className="flex justify-center lg:w-2/4">
+               <div className="w-80 h-44 bg-[#D9D9D9] flex justify-center items-center">
+                  <div className="w-10 h-10 rounded-full bg-[#1E1E1E] flex justify-center items-center">
+                     <ArrowDown className="text-[#D9D9D9] font-black" />
+                  </div>
+               </div>
+            </div>
+         </section>
       </>
    );
 }
