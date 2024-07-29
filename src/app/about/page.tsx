@@ -5,6 +5,7 @@ import SectionDescription from "../components/common/SectionDescription";
 import { useState } from "react";
 import Timeline from "../components/about/Timeline";
 import Modal from "../components/common/Modal";
+import { Globe, Instagram, Linkedin, Twitter, Youtube } from "lucide-react";
 
 export default function About() {
   const [selectedInfo, setSelectedInfo] = useState<string | null>(null);
@@ -75,6 +76,60 @@ export default function About() {
       <section className="container pt-2 pb-14">
         <SectionTitle align="text-center">Histório dos DevFests</SectionTitle>
         <Timeline />
+      </section>
+
+      {/* Canais de Comunicação */}
+      <section className="container pt-2 pb-14">
+        <SectionTitle align="text-center">Canais de Comunicação</SectionTitle>
+        <div className="flex flex-wrap md:justify-between justify-center mt-8 gap-8">
+          <div className="flex flex-col gap-2 items-center">
+            <a
+              href="https://gdg.community.dev/gdg-belo-horizonte/
+"
+              target="_blank"
+            >
+              <div className="bg-[#7B7B7B] w-24 h-24 flex justify-center items-center rounded-full transition-all cursor-pointer hover:bg-[#F0F0F0]">
+                <Globe className="w-14 h-14  text-[#F0F0F0] hover:text-[#7B7B7B]" />
+              </div>
+            </a>
+            <h1 className="font-black text-md">Página Oficial</h1>
+          </div>
+          <div className="flex flex-col gap-2 items-center">
+            <a
+              href="https://www.linkedin.com/company/gdg-belo-horizonte/"
+              target="_blank"
+            >
+              <div className="bg-[#7B7B7B] w-24 h-24 flex justify-center items-center rounded-full transition-all cursor-pointer hover:bg-[#F0F0F0]">
+                <Linkedin className="w-14 h-14  text-[#F0F0F0] hover:text-[#7B7B7B]" />
+              </div>
+            </a>
+            <h1 className="font-black text-md">Linkedin</h1>
+          </div>
+          <div className="flex flex-col gap-2 items-center">
+            <a href="https://www.instagram.com/gdg_bh/" target="_blank">
+              <div className="bg-[#7B7B7B] w-24 h-24 flex justify-center items-center rounded-full transition-all cursor-pointer hover:bg-[#F0F0F0]">
+                <Instagram className="w-14 h-14  text-[#F0F0F0] hover:text-[#7B7B7B]" />
+              </div>
+            </a>
+            <h1 className="font-black text-md">Instagram</h1>
+          </div>
+          <div className="flex flex-col gap-2 items-center">
+            <a href="https://www.youtube.com/@GDGBeloHorizonte" target="_blank">
+              <div className="bg-[#7B7B7B] w-24 h-24 flex justify-center items-center rounded-full transition-all cursor-pointer hover:bg-[#F0F0F0]">
+                <Youtube className="w-14 h-14  text-[#F0F0F0] hover:text-[#7B7B7B]" />
+              </div>
+            </a>
+            <h1 className="font-black text-md">Youtube</h1>
+          </div>
+          <div className="flex flex-col gap-2 items-center">
+            <a href="https://x.com/gdg_bh" target="_blank">
+              <div className="bg-[#7B7B7B] w-24 h-24 flex justify-center items-center rounded-full transition-all cursor-pointer hover:bg-[#F0F0F0]">
+                <Twitter className="w-14 h-14  text-[#F0F0F0] hover:text-[#7B7B7B]" />
+              </div>
+            </a>
+            <h1 className="font-black text-md">Twitter | X</h1>
+          </div>
+        </div>
       </section>
     </>
   );
