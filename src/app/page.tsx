@@ -42,12 +42,12 @@ export default function Home() {
         <div className="h-full mb-10 lg:mb-0 lg:mr-10 lg:w-full lg:text-justify ">
           <h1 className="text-3xl font-black py-4">O que é o Dev Fest?</h1>
           <p className="font-medium lg:mr-24">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
-            sapien elit, dapibus ut lectus quis, tincidunt congue ex. Lorem
-            ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sapien
-            elit, dapibus ut lectus quis, tincidunt congue ex. Lorem ipsum dolor
-            sit amet, consectetur adipiscing elit. Phasellus sapien elit,
-            dapibus ut lectus quis, tincidunt congue ex.
+            DevFest é uma conferência global de desenvolvedores organizada por
+            Google Developer Groups (GDGs) em todo o mundo. Esses eventos
+            organizados pela comunidade se concentram no aprendizado, na
+            construção e na conexão com outros desenvolvedores e profissionais
+            de tecnologia. Eles oferecem uma variedade de atividades, incluindo
+            palestras técnicas, workshops e oportunidades de networking.
           </p>
           <div className="h-8"></div>
           <HomeButton border="border-2 border-[#1e1e1e]">Saiba mais</HomeButton>
@@ -86,12 +86,7 @@ export default function Home() {
             </div>
             {selectedInfo && (
               <Modal isOpen={!!selectedInfo} onClose={closeModal} image={true}>
-                <Image
-                  src={selectedInfo}
-                  width={700}
-                  height={700}
-                  alt="GDG"
-                />
+                <Image src={selectedInfo} width={700} height={700} alt="GDG" />
               </Modal>
             )}
           </div>
@@ -128,21 +123,22 @@ export default function Home() {
         <div className="h-full mb-10 lg:mb-0 lg:mr-10 lg:w-full lg:text-justify ">
           <h1 className="text-3xl font-black py-4">Media Kit</h1>
           <p className="font-medium lg:mr-24">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
-            sapien elit, dapibus ut lectus quis, tincidunt congue ex. Lorem
-            ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sapien
-            elit, dapibus ut lectus quis, tincidunt congue ex. Lorem ipsum dolor
-            sit amet, consectetur adipiscing elit. Phasellus sapien elit,
-            dapibus ut lectus quis, tincidunt congue ex.
+            Baixe o nosso Media Kit para descobrir como estamos transformando a
+            cidade de Belo Horizonte através dos nossos eventos e iniciativas.
+            Saiba mais sobre a nossa missão, os projetos que promovemos e as
+            oportunidades de colaboração. Clique no link para fazer o
+            download e mergulhe no que estamos fazendo para fazer a diferença!
           </p>
           <div className="h-8"></div>
         </div>
         <div className="flex justify-center lg:w-2/4">
-          <div className="w-80 h-44 bg-[#D9D9D9] flex justify-center items-center">
-            <div className="w-10 h-10 rounded-full bg-[#1E1E1E] flex justify-center items-center">
-              <ArrowDown className="text-[#D9D9D9] font-black" />
+          <a href="/Devfest.pdf" download="Devfest.pdf">
+            <div className="w-80 h-44 bg-[#D9D9D9] flex justify-center items-center">
+              <div className="w-10 h-10 rounded-full bg-[#1E1E1E] flex justify-center items-center">
+                <ArrowDown className="text-[#D9D9D9] font-black" />
+              </div>
             </div>
-          </div>
+          </a>
         </div>
       </section>
     </>
