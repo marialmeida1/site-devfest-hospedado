@@ -4,7 +4,7 @@ import SectionTitle from "../components/common/SectionTitle";
 import SectionDescription from "../components/common/SectionDescription";
 import { useState } from "react";
 import Timeline from "../components/about/Timeline";
-import InfoModal from "../components/common/Modal";
+import Modal from "../components/common/Modal";
 
 export default function About() {
   const [selectedInfo, setSelectedInfo] = useState<string | null>(null);
@@ -60,14 +60,14 @@ export default function About() {
           />
         </div>
         {selectedInfo && (
-          <InfoModal isOpen={!!selectedInfo} onClose={closeModal} image={true}>
+          <Modal isOpen={!!selectedInfo} onClose={closeModal} image={true}>
             <Image
               src={selectedInfo}
               width={700}
               height={700}
               alt="GDG - Google Io"
             />
-          </InfoModal>
+          </Modal>
         )}
       </section>
 

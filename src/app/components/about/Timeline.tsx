@@ -76,7 +76,7 @@ export default function Timeline() {
                   src={el.image}
                   alt={el.title}
                   fill={true}
-                  sizes="200px, 150px"
+                  sizes="500px, 350px"
                 />
             </div>
           </div>
