@@ -114,7 +114,7 @@ export default function Home() {
       </section>
       <div className="bg-[#F0F0F0]">
         <section className="container pt-8 pb-16">
-          <SectionTitle align="text-center">Palestrantes</SectionTitle>
+          <SectionTitle align="text-center">Patrocinadores</SectionTitle>
           <SponsorCarousel />
         </section>
       </div>
