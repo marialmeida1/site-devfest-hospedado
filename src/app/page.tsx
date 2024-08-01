@@ -29,8 +29,8 @@ export default function Home() {
           <div className="h-full md:w-2/3 xl:w-1/3">
             <h1 className="text-3xl font-black pb-4">Dev Fest</h1>
             <SectionDescription>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
-              sapien elit, dapibus ut lectus quis, tincidunt congue ex.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sapien elit,
+              dapibus ut lectus quis, tincidunt congue ex.
             </SectionDescription>
             <div className="h-8"></div>
             <HomeButton>Inscrever-se</HomeButton>
@@ -42,12 +42,11 @@ export default function Home() {
         <div className="h-full mb-10 lg:mb-0 lg:mr-10 lg:w-full lg:text-justify ">
           <h1 className="text-3xl font-black py-4">O que é o Dev Fest?</h1>
           <p className="font-medium lg:mr-24">
-            DevFest é uma conferência global de desenvolvedores organizada por
-            Google Developer Groups (GDGs) em todo o mundo. Esses eventos
-            organizados pela comunidade se concentram no aprendizado, na
-            construção e na conexão com outros desenvolvedores e profissionais
-            de tecnologia. Eles oferecem uma variedade de atividades, incluindo
-            palestras técnicas, workshops e oportunidades de networking.
+            DevFest é uma conferência global de desenvolvedores organizada por Google Developer
+            Groups (GDGs) em todo o mundo. Esses eventos organizados pela comunidade se concentram
+            no aprendizado, na construção e na conexão com outros desenvolvedores e profissionais de
+            tecnologia. Eles oferecem uma variedade de atividades, incluindo palestras técnicas,
+            workshops e oportunidades de networking.
           </p>
           <div className="h-8"></div>
           <HomeButton border="border-2 border-[#1e1e1e]">Saiba mais</HomeButton>
@@ -56,7 +55,7 @@ export default function Home() {
           <div className="w-full h-72 grid grid-cols-2 gap-2 md:w-2/3 lg:w-full">
             <div className="row-span-2 relative">
               <Image
-                className="absolute inset-0 w-full h-full object-cover cursor-pointer"
+                className="absolute inset-0 w-full h-full object-cover cursor-pointer rounded-lg"
                 onClick={() => openModal("/img/devfest/Devfest2018.jpg")}
                 src="/img/devfest/Devfest2018.jpg"
                 alt="GDG"
@@ -66,7 +65,7 @@ export default function Home() {
             </div>
             <div className="row-span-1 h-full relative">
               <Image
-                className="absolute inset-0 w-full h-full object-cover cursor-pointer"
+                className="absolute inset-0 w-full h-full object-cover cursor-pointer rounded-lg"
                 onClick={() => openModal("/img/devfest/DevFest2017.jpg")}
                 src="/img/devfest/DevFest2017.jpg"
                 alt="GDG"
@@ -76,7 +75,7 @@ export default function Home() {
             </div>
             <div className="row-span-1 h-full relative">
               <Image
-                className="absolute inset-0 w-full h-full object-cover cursor-pointer"
+                className="absolute inset-0 w-full h-full object-cover cursor-pointer rounded-lg"
                 onClick={() => openModal("/img/devfest/DevFest2023.jpg")}
                 src="/img/devfest/DevFest2023.jpg"
                 alt="GDG"
@@ -122,18 +121,16 @@ export default function Home() {
       <section className="container py-8 px-4 flex flex-col text-center sm:w-4/5 lg:w-full lg:flex-row lg:items-center">
         <div className="h-full mb-10 lg:mb-0 lg:mr-10 lg:w-full lg:text-justify ">
           <h1 className="text-3xl font-black py-4">Media Kit</h1>
-          <p className="font-medium lg:mr-24">
-            Baixe o nosso Media Kit para descobrir como estamos transformando a
-            cidade de Belo Horizonte através dos nossos eventos e iniciativas.
-            Saiba mais sobre a nossa missão, os projetos que promovemos e as
-            oportunidades de colaboração. Clique no link para fazer o
-            download e mergulhe no que estamos fazendo para fazer a diferença!
+          <p className="font-medium lg:mr-24 ">
+            Gostaria de patrocinar nosso evento e obter visibilidade para sua marca? Entre em
+            contato pelo nosso e-mail para mais informações sobre as oportunidades de patrocínio.
+            Estamos ansiosos para colaborar com você!
           </p>
           <div className="h-8"></div>
         </div>
         <div className="flex justify-center lg:w-2/4">
           <a href="/Devfest.pdf" download="Devfest.pdf">
-            <div className="w-80 h-44 bg-[#D9D9D9] flex justify-center items-center">
+            <div className="w-80 h-44 bg-[#D9D9D9] flex justify-center items-center rounded-lg">
               <div className="w-10 h-10 rounded-full bg-[#1E1E1E] flex justify-center items-center">
                 <ArrowDown className="text-[#D9D9D9] font-black" />
               </div>

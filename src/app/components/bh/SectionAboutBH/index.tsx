@@ -13,7 +13,7 @@ export default function SectionAboutBH({ title, description }: SectionAboutBHPro
                </p>
             </div>
             <div className="flex justify-center lg:w-2/4">
-               <div className="w-72 h-52 bg-[#D9D9D9] flex justify-center items-center">
+               <div className="w-72 h-52 bg-[#D9D9D9] flex justify-center items-center rounded-lg">
                </div>
             </div>
          </section>

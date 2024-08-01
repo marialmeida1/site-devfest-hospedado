@@ -18,9 +18,9 @@ const Detail: React.FC<DetailProps> = ({ title, image, text }) => {
           <SectionDescription>{text}</SectionDescription>
         </div>
         {image ? (
-          <div className="w-full md:w-52 h-52 md:h-auto bg-gray-300 flex-shrink-0">
+          <div className="w-full md:w-52 h-52 md:h-auto  flex-shrink-0">
             <img
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover rounded-lg"
               src={image}
               alt={title}
             />

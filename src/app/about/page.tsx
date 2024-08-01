@@ -58,6 +58,7 @@ export default function About() {
             width={500}
             height={500}
             alt="GDG - Google Io"
+            className="rounded-lg"
           />
         </div>
         {selectedInfo && (

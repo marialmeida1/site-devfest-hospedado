@@ -72,7 +72,7 @@ export default function Timeline() {
           <div onClick={() => openModal(el)} className="w-full cursor-pointer h-40 flex items-center justify-center pl-4 lg:pl-0 lg:pb-12">
             <div className="relative w-40 md:min-w-full min-h-40 ">
                 <Image
-                  className="absolute inset-0 w-full h-full object-cover"
+                  className="absolute inset-0 w-full h-full object-cover rounded-lg"
                   src={el.image}
                   alt={el.title}
                   fill={true}
@@ -103,6 +103,7 @@ export default function Timeline() {
               width={700}
               height={700}
               alt={selectedEvent.title}
+              className="rounded-lg"
             />
           </div>
         </Modal>
