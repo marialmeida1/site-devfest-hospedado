@@ -5,7 +5,7 @@ import CountdownTimer from "./components/home/CountdownTimer";
 import HomeButton from "./components/home/HomeButton";
 import SpeakerCarousel from "./components/home/SpeakerCarousel";
 import QuestionAccordion from "./components/home/QuestionAccordion";
-import SponsorCarousel from "./components/home/SponsorCarousel";
+import SponsorsSection from "./components/home/SponsorsSection";
 import { ArrowDown } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
@@ -115,7 +115,7 @@ export default function Home() {
       <div className="bg-[#F0F0F0]">
         <section className="container pt-8 pb-16">
           <SectionTitle align="text-center">Patrocinadores</SectionTitle>
-          <SponsorCarousel />
+          <SponsorsSection />
         </section>
       </div>
       <section className="container py-8 px-4 flex flex-col text-center sm:w-4/5 lg:w-full lg:flex-row lg:items-center">
