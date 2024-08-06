@@ -84,7 +84,7 @@ export default function About() {
         <SectionTitle align="text-center">Canais de Comunicação</SectionTitle>
         <div className="flex flex-wrap md:justify-between justify-center mt-8 gap-8">
           <div className="flex flex-col gap-2 items-center">
-            <a
+            <a arial-label="Página Oficial"
               href="https://gdg.community.dev/gdg-belo-horizonte/
 "
               target="_blank"
@@ -96,7 +96,7 @@ export default function About() {
             <h1 className="font-black text-md">Página Oficial</h1>
           </div>
           <div className="flex flex-col gap-2 items-center">
-            <a
+            <a arial-label="Linkedin"
               href="https://www.linkedin.com/company/gdg-belo-horizonte/"
               target="_blank"
             >
@@ -107,7 +107,7 @@ export default function About() {
             <h1 className="font-black text-md">Linkedin</h1>
           </div>
           <div className="flex flex-col gap-2 items-center">
-            <a href="https://www.instagram.com/gdg_bh/" target="_blank">
+            <a arial-label="Instagram" href="https://www.instagram.com/gdg_bh/" target="_blank">
               <div className="bg-[#7B7B7B] w-24 h-24 flex justify-center items-center rounded-full transition-all cursor-pointer hover:bg-[#F0F0F0]">
                 <Instagram className="w-14 h-14  text-[#F0F0F0] hover:text-[#7B7B7B]" />
               </div>
@@ -115,7 +115,7 @@ export default function About() {
             <h1 className="font-black text-md">Instagram</h1>
           </div>
           <div className="flex flex-col gap-2 items-center">
-            <a href="https://www.youtube.com/@GDGBeloHorizonte" target="_blank">
+            <a arial-label="Youtube" href="https://www.youtube.com/@GDGBeloHorizonte" target="_blank">
               <div className="bg-[#7B7B7B] w-24 h-24 flex justify-center items-center rounded-full transition-all cursor-pointer hover:bg-[#F0F0F0]">
                 <Youtube className="w-14 h-14  text-[#F0F0F0] hover:text-[#7B7B7B]" />
               </div>
@@ -123,7 +123,7 @@ export default function About() {
             <h1 className="font-black text-md">Youtube</h1>
           </div>
           <div className="flex flex-col gap-2 items-center">
-            <a href="https://x.com/gdg_bh" target="_blank">
+            <a arial-label="Twitter" href="https://x.com/gdg_bh" target="_blank">
               <div className="bg-[#7B7B7B] w-24 h-24 flex justify-center items-center rounded-full transition-all cursor-pointer hover:bg-[#F0F0F0]">
                 <Twitter className="w-14 h-14  text-[#F0F0F0] hover:text-[#7B7B7B]" />
               </div>

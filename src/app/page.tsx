@@ -37,7 +37,11 @@ export default function Home() {
           </div>
         </section>
       </div>
-      <CountdownTimer />
+
+      <div className="min-h-96 md:min-h-52">
+        <CountdownTimer />
+      </div>
+
       <section className="container py-8 px-4 flex flex-col text-center sm:w-4/5 lg:w-full lg:flex-row lg:items-center">
         <div className="h-full mb-10 lg:mb-0 lg:mr-10 lg:w-full lg:text-justify ">
           <h1 className="text-3xl font-black py-4">O que é o Dev Fest?</h1>
@@ -129,7 +133,7 @@ export default function Home() {
           <div className="h-8"></div>
         </div>
         <div className="flex justify-center lg:w-2/4">
-          <a href="/Devfest.pdf" download="Devfest.pdf">
+          <a href="/Devfest.pdf" download="Devfest.pdf" aria-label="Conteúdos">
             <div className="w-80 h-44 bg-[#D9D9D9] flex justify-center items-center rounded-lg">
               <div className="w-10 h-10 rounded-full bg-[#1E1E1E] flex justify-center items-center">
                 <ArrowDown className="text-[#D9D9D9] font-black" />
