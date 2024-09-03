@@ -46,10 +46,10 @@ export default function CountdownTimer() {
 
     return (
         <section className="container py-9 overflow-hidden mx-auto flex justify-center items-center flex-wrap gap-9">
-            <CountdownElement remainingQuantity={timeRemaining?.days || '00'} contentType="dias" />
-            <CountdownElement remainingQuantity={timeRemaining?.hours || '00'} contentType="horas" />
-            <CountdownElement remainingQuantity={timeRemaining?.minutes || '00'} contentType="minutos" />
-            <CountdownElement remainingQuantity={timeRemaining?.seconds || '00'} contentType="segundos" />
+            <CountdownElement remainingQuantity={timeRemaining?.days || '00'} contentType="dias" bgColor="red" />
+            <CountdownElement remainingQuantity={timeRemaining?.hours || '00'} contentType="horas" bgColor="blue" />
+            <CountdownElement remainingQuantity={timeRemaining?.minutes || '00'} contentType="minutos" bgColor="green" />
+            <CountdownElement remainingQuantity={timeRemaining?.seconds || '00'} contentType="segundos" bgColor="yellow" />
         </section>
     );
 }

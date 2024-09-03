@@ -18,6 +18,9 @@ const config: Config = {
             "yellow-dark": "#A58117",
             "yellow-light": "#FFDB74",
          },
+         backgroundImage: {
+            'gradient-to-bottom': 'linear-gradient(to bottom, #fff, #eee)',
+          },
          container: {
             padding: "1rem",
             center: true,

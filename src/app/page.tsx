@@ -24,23 +24,19 @@ export default function Home() {
 
   return (
     <>
-      <div className="bg-[#9f9f9f]">
-        <section className="container h-80 py-14 xl:h-72">
-          <div className="h-full md:w-2/3 xl:w-1/3">
-            <h1 className="text-3xl font-black pb-4">Dev Fest</h1>
-            <SectionDescription>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sapien elit,
-              dapibus ut lectus quis, tincidunt congue ex.
-            </SectionDescription>
-            <div className="h-8"></div>
-            <HomeButton>Inscrever-se</HomeButton>
-          </div>
-        </section>
+      <div className="bg-gradient-to-bottom">
+        <Image
+          className="w-full"
+          width={1920}
+          height={1080}
+          src="/img/home/banner/banner.jpg"
+          alt="Banner Devfest"
+        />
+        <div className="min-h-32 md:min-h-52">
+          <CountdownTimer />
+        </div>
       </div>
 
-      <div className="min-h-96 md:min-h-52">
-        <CountdownTimer />
-      </div>
 
       <section className="container py-8 px-4 flex flex-col text-center sm:w-4/5 lg:w-full lg:flex-row lg:items-center">
         <div className="h-full mb-10 lg:mb-0 lg:mr-10 lg:w-full lg:text-justify ">
