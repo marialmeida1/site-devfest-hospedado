@@ -5,6 +5,16 @@ import Image from "next/image";
 import SponsorDivisionItem from "./SponsorDivision/SponsorDivisionItem";
 
 export default function SponsorsSection() {
+
+    const sponsors = [
+        {
+            name: "PUC Minas",
+            value: 5,
+            link: 'https://www.pucminas.br/',
+            img: 
+        }
+    ]
+
     return (
         <div>
             <SponsorDivision category="Diamante">
