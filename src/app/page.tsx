@@ -179,9 +179,9 @@ export default function Home() {
         <section className="container py-12 px-4 flex flex-col text-center sm:w-4/5 lg:w-full lg:flex-row lg:items-center">
           <div className="h-full mb-10 lg:mb-0 lg:mr-10 lg:w-full lg:text-justify ">
             <h1 className="text-3xl font-black py-4">Media Kit</h1>
-            <p className="font-medium lg:mr-24 ">
+            <p className="lg:mr-24 ">
               Interessado em se tornar um patrocinador? Entre em contato conosco pelo e-mail{" "}
-              <a href="mailto:gdgbhz@gmail.com">gdgbhz@gmail.com</a> para saber mais sobre as
+              <a href="mailto:gdgbhz@gmail.com" className="text-blue hover:underline">gdgbhz@gmail.com</a> para saber mais sobre as
               oportunidades de parceria e como sua empresa pode se envolver.
             </p>
             <div className="h-8"></div>
@@ -204,21 +204,27 @@ export default function Home() {
         <div className="mt-7 flex justify-center flex-wrap">
           <CommunicationChannelCard
             cardLink="https://chat.whatsapp.com/CxZFvGaZF095OIzy71rXTo"
-            cardColor="green"
+            cardColor="green hover:bg-green-dark"
             cardText="Comunidade GDG"
             imagePath="/img/home/icons/whatsapp.svg"
           />
           <CommunicationChannelCard
             cardLink="https://www.instagram.com/gdg_bh?igsh=MThldWxkcmZ3MWwxYw=="
-            cardColor="blue"
+            cardColor="red hover:bg-red-dark"
             cardText="Instagram GDG"
             imagePath="/img/home/icons/instagram.svg"
           />
           <CommunicationChannelCard
             cardLink="https://gdg.community.dev/gdg-belo-horizonte/"
-            cardColor="yellow"
+            cardColor="yellow hover:bg-yellow-dark"
             cardText="Site GDG"
             imagePath="/img/home/icons/web.svg"
+          />
+          <CommunicationChannelCard
+            cardLink="https://www.linkedin.com/company/gdg-belo-horizonte/"
+            cardColor="blue hover:bg-blue-dark"
+            cardText="Linkedin"
+            imagePath="/img/home/icons/linkedin.svg"
           />
         </div>
       </section>
@@ -229,9 +235,9 @@ export default function Home() {
             <p>
               <strong>Data:</strong> 26 de outubro | 8:00 horas
             </p>
-            <p>
+            <a className="hover:underline" href="https://www.google.com/maps/place/PUC+Minas+-+Unidade+Pra%C3%A7a+da+Liberdade/@-19.9332735,-43.9397233,17z/data=!3m1!4b1!4m6!3m5!1s0xa699dc57d681cf:0x897f2f71ae2c8900!8m2!3d-19.9332786!4d-43.9371484!16s%2Fg%2F1ptyh1cl7?entry=tts&g_ep=EgoyMDI0MDkwMi4xKgBIAVAD">
               <strong>Local:</strong> Puc Minas Liberdade Av. Brasil, 2023 - Funcionários
-            </p>
+            </a>
           </div>
         </section>
       </div>

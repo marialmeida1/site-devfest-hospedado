@@ -41,7 +41,7 @@ export const Navbar = () => {
         <ul className="w-3/5 hidden md:flex md:justify-between ">
           {links.map((el, i) => (
             <li key={i}>
-              <Link href={el.link}>{el.name}</Link>
+              <Link href={el.link} className="hover:border-b-2 border-gradient">{el.name}</Link>
             </li>
           ))}
         </ul>
