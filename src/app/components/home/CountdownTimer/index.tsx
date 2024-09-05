@@ -45,7 +45,7 @@ export default function CountdownTimer() {
     if (!isMounted) return null;
 
     return (
-        <section className="container py-9 overflow-hidden mx-auto flex justify-center items-center flex-wrap gap-9">
+        <section className="container py-4 overflow-hidden mx-auto flex justify-center items-center flex-wrap gap-9">
             <CountdownElement remainingQuantity={timeRemaining?.days || '00'} contentType="dias" bgColor="red" />
             <CountdownElement remainingQuantity={timeRemaining?.hours || '00'} contentType="horas" bgColor="blue" />
             <CountdownElement remainingQuantity={timeRemaining?.minutes || '00'} contentType="minutos" bgColor="green" />

@@ -37,7 +37,7 @@ export const Navbar = () => {
   return (
     <>
       {" "}
-      <nav className="w-full h-16 flex items-center justify-center ">
+      <nav className="w-full h-16 flex items-center justify-center shadow-lg">
         <ul className="w-3/5 hidden md:flex md:justify-between ">
           {links.map((el, i) => (
             <li key={i}>

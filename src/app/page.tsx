@@ -34,12 +34,12 @@ export default function Home() {
           src="/img/home/banner/banner.jpg"
           alt="Banner Devfest"
         />
-        <div className="min-h-32 md:min-h-52">
+        <div className="min-h-32 md:min-h-36 bg-gradient-to-b from-[#eeeeee] to-[#ffffff]">
           <CountdownTimer />
         </div>
       </div>
 
-      <section className="h-[30rem] md:h-72 bg-dark-background flex flex-col md:flex-row justify-center items-center">
+      <section className="h-[30rem] md:h-72 bg-[#252525] flex flex-col md:flex-row justify-center items-center">
         <HomeLink link="https://www.sympla.com.br/evento/devfest-belo-horizonte/2586443" text="Inscreva-se" />
         <div className="w-80 h-1 my-10 md:w-1 md:mx-10 md:h-44 bg-text-color"></div>
         <div className="flex flex-col gap-4">
@@ -67,8 +67,8 @@ export default function Home() {
             />
             <div>
               <span className="text-text-color font-bold">Local:</span>
-              <h4 className="text-lg mb-2"><strong>PUC Minas</strong> - Praça da Liberdade</h4>
-              <a href="https://maps.app.goo.gl/kD25oagS6TGC2LX98" target="_blank" className="px-1.5 py-1 rounded-lg border-2 border-white transition-all hover:bg-white hover:text-black">
+              <h4 className="text-lg mb-2 hover:underline"><a href="https://www.google.com/maps/place/PUC+Minas+-+Unidade+Pra%C3%A7a+da+Liberdade/@-19.9332735,-43.9397233,17z/data=!3m1!4b1!4m6!3m5!1s0xa699dc57d681cf:0x897f2f71ae2c8900!8m2!3d-19.9332786!4d-43.9371484!16s%2Fg%2F1ptyh1cl7?entry=tts&g_ep=EgoyMDI0MDkwMi4xKgBIAVAD"><strong>PUC Minas</strong> - Praça da Liberdade</a></h4>
+              <a href="#maps"  className="px-1.5 py-1 rounded-lg border-2 border-white transition-all hover:bg-white hover:text-black">
                 Ver endereço
               </a>
             </div>
@@ -86,7 +86,7 @@ export default function Home() {
             workshops e oportunidades de networking.
           </p>
           <div className="h-8"></div>
-          <HomeButton border="border-2 border-[#1e1e1e]">Saiba mais</HomeButton>
+          <HomeButton border="border-2 border-[#1e1e1e]" link="/about">Saiba mais</HomeButton>
         </div>
         <div className="flex justify-center lg:w-2/4">
           <div className="w-full h-72 grid grid-cols-2 gap-2 md:w-2/3 lg:w-full">
@@ -201,7 +201,7 @@ export default function Home() {
             />
           </div>
         </section>
-        <div className="py-16 bg-dark-background md:py-0">
+        <div className="py-16 bg-dark-background md:py-0" id="maps">
           <section className="container h-32 text-white flex flex-col justify-between items-center md:flex-row">
             <h1 className="font-black text-3xl mb-10 md:mb-0">Localização</h1>
             <div className="text-center text-sm flex flex-col gap-1 md:text-left md:text-base">
