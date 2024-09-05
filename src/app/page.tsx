@@ -154,26 +154,29 @@ export default function Home() {
           <SponsorsSection />
         </section>
       </div>
-      <section className="container py-8 px-4 flex flex-col text-center sm:w-4/5 lg:w-full lg:flex-row lg:items-center">
-        <div className="h-full mb-10 lg:mb-0 lg:mr-10 lg:w-full lg:text-justify ">
-          <h1 className="text-3xl font-black py-4">Media Kit</h1>
-          <p className="font-medium lg:mr-24 ">
-            Gostaria de patrocinar nosso evento e obter visibilidade para sua marca? Entre em
-            contato pelo nosso e-mail para mais informações sobre as oportunidades de patrocínio.
-            Estamos ansiosos para colaborar com você!
-          </p>
-          <div className="h-8"></div>
-        </div>
-        <div className="flex justify-center lg:w-2/4">
-          <a href="/Devfest.pdf" download="Devfest.pdf" aria-label="Conteúdos">
-            <div className="w-80 h-44 bg-[#D9D9D9] flex justify-center items-center rounded-lg">
-              <div className="w-10 h-10 rounded-full bg-[#1E1E1E] flex justify-center items-center">
-                <ArrowDown className="text-[#D9D9D9] font-black" />
+      <div className="bg-dark-background text-white">
+        <section className="container py-12 px-4 flex flex-col text-center sm:w-4/5 lg:w-full lg:flex-row lg:items-center">
+          <div className="h-full mb-10 lg:mb-0 lg:mr-10 lg:w-full lg:text-justify ">
+            <h1 className="text-3xl font-black py-4">Media Kit</h1>
+            <p className="font-medium lg:mr-24 ">
+            Interessado em se tornar um patrocinador? Entre em contato conosco pelo e-mail <a href="mailto:gdgbhz@gmail.com">gdgbhz@gmail.com</a> para saber 
+            mais sobre as oportunidades de parceria e como sua empresa pode se envolver.
+            </p>
+            <div className="h-8"></div>
+          </div>
+          <div className="flex justify-center lg:w-2/4">
+            <a href="/Devfest.pdf" download="Devfest.pdf" aria-label="Conteúdos">
+            <div className="bg-dark-background px-1 py-1 rounded-md border-0 border-transparent bg-gradient p-[2px]">
+              <div className="w-80 h-44 bg-dark-background flex justify-center items-center rounded-lg">
+                <div className="w-10 h-10 rounded-full bg-text-color flex justify-center items-center">
+                  <ArrowDown className="text-dark-background font-black" />
+                </div>
               </div>
             </div>
-          </a>
-        </div>
-      </section>
+            </a>
+          </div>
+        </section>
+      </div>
     </>
   );
 }
