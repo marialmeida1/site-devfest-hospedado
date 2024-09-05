@@ -201,6 +201,23 @@ export default function Home() {
             />
           </div>
         </section>
+        <div className="py-16 bg-dark-background md:py-0">
+          <section className="container h-32 text-white flex flex-col justify-between items-center md:flex-row">
+            <h1 className="font-black text-3xl mb-10 md:mb-0">Localização</h1>
+            <div className="text-center text-sm flex flex-col gap-1 md:text-left md:text-base">
+              <p><strong>Data:</strong> 26 de outubro | 8:00 horas</p>
+              <p><strong>Local:</strong> Puc Minas Liberdade Av. Brasil, 2023 - Funcionários</p>
+            </div>
+          </section>
+        </div>
+        <section className="h-64">
+            <iframe 
+               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3750.789497313057!2d-43.939723324251055!3d-19.933273538411505!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xa699dc57d681cf%3A0x897f2f71ae2c8900!2sPUC%20Minas%20-%20Unidade%20Pra%C3%A7a%20da%20Liberdade!5e0!3m2!1spt-BR!2sbr!4v1722176637277!5m2!1spt-BR!2sbr"
+               loading="lazy"
+               className="w-full h-full filter grayscale"
+            >
+            </iframe>
+         </section>
     </>
   );
 }
