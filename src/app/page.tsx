@@ -11,6 +11,7 @@ import Image from "next/image";
 import { useState } from "react";
 import Modal from "./components/common/Modal";
 import { HomeLink } from "./components/home/HomeLink";
+import { CommunicationChannelCard } from "./components/home/CommunicationChannelCard";
 
 export default function Home() {
   const [selectedInfo, setSelectedInfo] = useState<string | null>(null);
@@ -177,6 +178,29 @@ export default function Home() {
           </div>
         </section>
       </div>
+      <section className="container pt-16 pb-16">
+          <SectionTitle align="text-center">Canais de Comunicação</SectionTitle>
+          <div className="mt-7 flex justify-center flex-wrap">
+            <CommunicationChannelCard
+              cardLink="https://chat.whatsapp.com/CxZFvGaZF095OIzy71rXTo"
+              cardColor="green"
+              cardText="Comunidade GDG"
+              imagePath="/img/home/icons/whatsapp.svg"
+            />
+            <CommunicationChannelCard
+              cardLink="https://www.instagram.com/gdg_bh?igsh=MThldWxkcmZ3MWwxYw=="
+              cardColor="blue"
+              cardText="Instagram GDG"
+              imagePath="/img/home/icons/instagram.svg"
+            />
+            <CommunicationChannelCard
+              cardLink="https://gdg.community.dev/gdg-belo-horizonte/"
+              cardColor="yellow"
+              cardText="Site GDG"
+              imagePath="/img/home/icons/web.svg"
+            />
+          </div>
+        </section>
     </>
   );
 }
