@@ -8,8 +8,33 @@
    color: white;
 }
 
-#nav-footer .footer-links {
+.footer-links {
    display: flex;
    flex-direction: column;
-   align-items: center;
+   justify-content: start;
+}
+
+.title {
+   font-size: 1.5rem;
+   font-weight: 800;
+   padding-bottom: 0.5rem;
+}
+
+.devfest-button {
+   color: #fff;
+   font-weight: 600;
+   padding: 0.5rem;
+   border: 2px solid #fff;
+   width: fit-content;
+   border-radius: 0.5rem;
+   margin-top: 0.5rem;
+}
+
+.devfest-location:hover {
+   text-decoration: underline;
+}
+
+.channel-link:hover {
+   cursor: pointer;
+   text-decoration: underline;
 }

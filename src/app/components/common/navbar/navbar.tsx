@@ -18,7 +18,7 @@ export const Navbar = () => {
     {
       name: "Programação",
       link: "../../schedule",
-    },
+    },/*
     {
       name: "Conheça BH",
       link: "../../bh",
@@ -26,7 +26,7 @@ export const Navbar = () => {
     {
       name: "Organizadores",
       link: "../../organizers",
-    },
+    },*/
   ];
 
   const [showMe, setShowMe] = useState(false);
