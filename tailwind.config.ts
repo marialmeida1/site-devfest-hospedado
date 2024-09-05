@@ -17,10 +17,12 @@ const config: Config = {
             yellow: "#FBBC04",
             "yellow-dark": "#A58117",
             "yellow-light": "#FFDB74",
+            "dark-background": "#1E1E1E",
+            "text-color": "#C3C3C3",
          },
          backgroundImage: {
-            'gradient-to-bottom': 'linear-gradient(to bottom, #fff, #eee)',
-          },
+            'gradient': 'linear-gradient(to right, theme("colors.red"), theme("colors.green"), theme("colors.blue"))',
+         },
          container: {
             padding: "1rem",
             center: true,
