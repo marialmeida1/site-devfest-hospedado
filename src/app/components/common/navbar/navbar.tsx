@@ -44,7 +44,10 @@ export const Navbar = () => {
           ))}
         </ul>
         <div className="hidden md:block">
-          <HomeButton border="border-2 border-[#1e1e1e]" link="https://www.sympla.com.br/evento/devfest-belo-horizonte/2586443">
+          <HomeButton
+            border="border-2 border-[#1e1e1e]"
+            link="https://www.sympla.com.br/evento/devfest-belo-horizonte/2586443"
+          >
             Inscreva-se
           </HomeButton>
         </div>
@@ -63,17 +66,15 @@ export const Navbar = () => {
 
       <div className={`${showMe ? "block" : "hidden"} transition-transform`}>
         {links.map((el, i) => (
-          <li
-            key={i}
-            onClick={toggle}
-            className="list-none w-full flex text-sm text-zinc-700 justify-center py-2 hover:bg-gray-50 border-b border-gray-100"
-          >
-            <Link
-              href={el.link}
+          <Link href={el.link}>
+            <li
+              key={i}
+              onClick={toggle}
+              className="list-none w-full flex text-sm text-zinc-700 justify-center py-2 hover:bg-gray-50 border-b border-gray-100"
             >
               {el.name}
-            </Link>
-          </li>
+            </li>
+          </Link>
         ))}
       </div>
     </>
