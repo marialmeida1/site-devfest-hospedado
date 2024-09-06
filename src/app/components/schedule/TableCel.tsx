@@ -240,7 +240,7 @@ const infos: TableInfo[] = [
 const trails: string[] = [
   "Trilha Dev",
   "Trilha IA",
-  "Sala Carreira",
+  "Trilha Carreira",
   "Workshop",
   "Sem categoria",
 ];
