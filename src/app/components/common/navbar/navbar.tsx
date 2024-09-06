@@ -66,9 +66,8 @@ export const Navbar = () => {
 
       <div className={`${showMe ? "block" : "hidden"} transition-transform`}>
         {links.map((el, i) => (
-          <Link href={el.link}>
+          <Link href={el.link} key={i}>
             <li
-              key={i}
               onClick={toggle}
               className="list-none w-full flex text-sm text-zinc-700 justify-center py-2 hover:bg-gray-50 border-b border-gray-100"
             >
