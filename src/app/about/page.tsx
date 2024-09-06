@@ -77,7 +77,10 @@ export default function About() {
         <Timeline />
       </section>
 
-      <section className="container">
+      <section className="container py-8">
+
+        <SectionTitle align="text-center">Organizadores</SectionTitle>
+
         <Detail
           title="GDG"
           image="/img/logo_gdg-bg.png"

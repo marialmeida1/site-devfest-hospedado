@@ -12,7 +12,7 @@ interface DetailProps {
 const Detail: React.FC<DetailProps> = ({ title, image, text }) => {
   return (
     <>
-      <section className="container flex flex-col gap-8 md:flex-row md:gap-16 py-8 ">
+      <section className="container flex flex-col gap-8 md:flex-row md:gap-16 py-2 ">
         <div>
           <SectionTitle align="md:text-left">{title}</SectionTitle>
           <SectionDescription>{text}</SectionDescription>
