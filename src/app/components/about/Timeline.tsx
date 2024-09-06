@@ -7,7 +7,6 @@ import Modal from "../common/Modal";
 interface Events {
   title: string;
   year: string;
-  description: string;
   image: string;
 }
 
@@ -15,36 +14,26 @@ const events: Events[] = [
   {
     title: "DevFest 2015",
     year: "2015",
-    description:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, dolorum hic? Molestiae illo accusamus esse.",
     image: "/img/devfest/Devfest2015.png",
   },
   {
     title: "DevFest 2016",
     year: "2016",
-    description:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, dolorum hic? Molestiae illo accusamus esse.",
     image: "/img/devfest/Devfest2016.png",
   },
   {
     title: "DevFest 2017",
     year: "2017",
-    description:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, dolorum hic? Molestiae illo accusamus esse.",
     image: "/img/devfest/DevFest2017.jpg",
   },
   {
     title: "DevFest 2018",
     year: "2018",
-    description:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, dolorum hic? Molestiae illo accusamus esse.",
     image: "/img/devfest/Devfest2018.jpg",
   },
   {
     title: "DevFest 2023",
     year: "2023",
-    description:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, dolorum hic? Molestiae illo accusamus esse.",
     image: "/img/devfest/DevFest2023.jpg",
   },
 ];
@@ -69,7 +58,7 @@ export default function Timeline() {
             <div className="bg-gray-900 rounded-full top-1/2 w-3 h-3 absolute"></div>
           </div>
 
-          <div onClick={() => openModal(el)} className="w-full cursor-pointer h-40 flex items-center justify-center pl-4 lg:pl-0 lg:pb-12">
+          <div onClick={() => openModal(el)} className="w-2/3 md:w-full cursor-pointer h-40 flex items-center justify-center pl-4 lg:pl-0 lg:pb-12">
             <div className="relative w-40 md:min-w-full min-h-40 ">
                 <Image
                   className="absolute inset-0 w-full h-full object-cover rounded-lg"
@@ -82,8 +71,7 @@ export default function Timeline() {
           </div>
 
           <div className="flex flex-col align-middle justify-center pl-2">
-            <p className="text-sm text-center lg:pb-6">{el.description}</p>
-            <h4 className="pt-2 lg:pt-6 lg:pb-4 text-center font-black text-lg">
+            <h4 className="pt-2 lg:pt-6 lg:pb-4 text-center font-black text-3xl text-zinc-800">
               {el.year}
             </h4>
           </div>

@@ -22,7 +22,7 @@ const infos: TableInfo[] = [
     id_col: 1,
     hourly_start: "8:00",
     hourly_end: "8:50",
-    name: "Credenciamento + Coffe",
+    name: "Credenciamento + Networking",
     speaker: "Palestrante",
     level: "Iniciante",
   },
@@ -284,7 +284,7 @@ export default function TableCel({ id_line, id_col, rep, trail }: Props) {
               <h2 className="text-xs text-zinc-700">{el.speaker}</h2>
               <h1 className="text-sm font-bold">{el.name}</h1>
             </div>
-            <div className="mt-4 flex flex-row justify-between">
+            {/*<div className="mt-4 flex flex-row justify-between">
               {el.level && <LevelButton level={el.level} />}
               <div
                 onClick={() => openModal(el)}
@@ -324,7 +324,7 @@ export default function TableCel({ id_line, id_col, rep, trail }: Props) {
                       </span>
                       {selectedInfo.hourly_end}
                     </li>
-                    <li className="text-base leading-relaxed text-zinc-500">
+                    {/*<li className="text-base leading-relaxed text-zinc-500">
                       <span className="text-base text-zinc-700 font-bold">
                         Nível:{" "}
                       </span>
@@ -333,7 +333,7 @@ export default function TableCel({ id_line, id_col, rep, trail }: Props) {
                   </ul>
                 </InfoModal>
               )}
-            </div>
+            </div>*/}
           </div>
         ))}
     </>

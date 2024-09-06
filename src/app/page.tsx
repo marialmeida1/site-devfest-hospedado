@@ -148,7 +148,7 @@ export default function Home() {
             Palestrantes{" "}
             <HomeLink link="#" text="EM BREVE" bg="bg-[#F0F0F0]" color="text-zinc-900"></HomeLink>
           </SectionTitle>
-          <div className="flex justify-center -ml-24">
+          <div className="flex justify-center md:-ml-24 -ml-12">
             <FontAwesomeIcon icon={faCircleQuestion} className="text-9xl text-red -mr-8" />
             <FontAwesomeIcon icon={faCircleQuestion} className="text-9xl text-yellow -mr-8" />
             <FontAwesomeIcon icon={faCircleQuestion} className="text-9xl text-blue -mr-8" />

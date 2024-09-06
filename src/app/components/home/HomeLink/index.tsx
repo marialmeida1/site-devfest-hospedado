@@ -8,7 +8,7 @@ interface HomeLinkProps {
 export function HomeLink({ link, text, bg, color}: HomeLinkProps) {
   return (
     <a
-      className={`relative inline-block text-white ${color} uppercase font-black text-lg bg-transparent px-1 py-1 rounded-md border-0 border-transparent bg-gradient p-[2px]`}
+      className={`relative inline-block text-white ${color} w-fit uppercase font-black text-lg bg-transparent px-1 py-1 rounded-md border-0 border-transparent bg-gradient p-[2px]`}
       href={link}
       target="_blank"
     >

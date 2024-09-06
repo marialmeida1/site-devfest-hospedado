@@ -6,6 +6,7 @@ import { useState } from "react";
 import Timeline from "../components/about/Timeline";
 import Modal from "../components/common/Modal";
 import { Globe, Instagram, Linkedin, Twitter, Youtube } from "lucide-react";
+import Detail from "../components/common/DetailCard";
 
 export default function About() {
   const [selectedInfo, setSelectedInfo] = useState<string | null>(null);
@@ -25,112 +26,69 @@ export default function About() {
         <div>
           <SectionTitle align="text-center">O que é o DevFest?</SectionTitle>
           <SectionDescription>
-            DevFest é uma conferência global de desenvolvedores organizada por
-            Google Developer Groups (GDGs) em todo o mundo. Esses eventos
-            organizados pela comunidade se concentram no aprendizado, na
-            construção e na conexão com outros desenvolvedores e profissionais
-            de tecnologia. Eles oferecem uma variedade de atividades, incluindo
-            palestras técnicas, workshops e oportunidades de networking.
+            O DevFest é uma conferência global de desenvolvedores organizada pelos Google Developer
+            Groups (GDGs) ao redor do mundo. Esses eventos, organizados pela comunidade, focam em
+            aprendizado, construção de projetos e conexão entre desenvolvedores e profissionais de
+            tecnologia. As atividades oferecidas incluem palestras técnicas, workshops práticos e
+            oportunidades de networking, proporcionando um ambiente rico para o desenvolvimento
+            profissional e a troca de conhecimento.
           </SectionDescription>
+          <div className="pt-6">
+            <SectionDescription>
+              Estamos empolgados em anunciar a sexta edição do DevFest em Belo Horizonte! Desde a
+              sua primeira edição em 2015, o DevFest BH tem sido um evento crucial para a comunidade
+              de desenvolvedores da região, crescendo a cada ano em tamanho e impacto.
+            </SectionDescription>
+          </div>
         </div>
       </section>
 
       {/* O que é o GDG */}
-      <section className="container flex flex-col gap-8 md:flex-row md:gap-16 py-6">
-        <div>
-          <SectionTitle align="md:text-left text-center">
-            O que é o GDG?
-          </SectionTitle>
+      <div className="bg-dark-background my-12">
+        <section className="container flex flex-col text-white gap-8 items-center align-middle md:flex-row md:gap-16 py-6">
           <SectionDescription>
-            O que é o GDG: Somos o Google Developer Groups de Belo Horizonte
-            (GDG BH), uma comunidade apaixonada por tecnologia que se reúne para
-            aprender, compartilhar e construir juntos. Como parte da rede global
-            GDG, fazemos parte de uma comunidade com mais de 10.000 grupos em
-            mais de 170 países, oferecendo uma ampla variedade de eventos e
-            atividades emocionantes, incluindo meetups, hackathons, workshops e
-            conferências.
+            O que é o GDG: Somos o Google Developer Groups de Belo Horizonte (GDG BH), uma
+            comunidade apaixonada por tecnologia que se reúne para <b>aprender, compartilhar e
+            construir juntos</b>. Como parte da rede global GDG, fazemos parte de uma comunidade com
+            mais de <b>10.000 grupos em mais de 170 países</b>, oferecendo uma ampla variedade de eventos e
+            atividades emocionantes, incluindo <b>meetups, hackathons, workshops e conferências.</b>
           </SectionDescription>
-        </div>
-        <div className="md:min-w-96 cursor-pointer">
-          <Image
-            onClick={() => openModal("/img/gdg/google_io.jpg")}
-            src="/img/gdg/google_io.jpg"
-            width={500}
-            height={500}
-            alt="GDG - Google Io"
-            className="rounded-lg"
-          />
-        </div>
-        {selectedInfo && (
-          <Modal isOpen={!!selectedInfo} onClose={closeModal} image={true}>
+          <div className="md:min-w-96 cursor-pointer">
             <Image
-              src={selectedInfo}
-              width={700}
-              height={700}
+              onClick={() => openModal("/img/gdg/google_io.jpg")}
+              src="/img/gdg/google_io.jpg"
+              width={500}
+              height={500}
               alt="GDG - Google Io"
+              className="rounded-lg"
             />
-          </Modal>
-        )}
-      </section>
+          </div>
+          {selectedInfo && (
+            <Modal isOpen={!!selectedInfo} onClose={closeModal} image={true}>
+              <Image src={selectedInfo} width={700} height={700} alt="GDG - Google Io" />
+            </Modal>
+          )}
+        </section>
+      </div>
 
       {/* Timeline */}
-      <section className="container pt-2 pb-14">
-        <SectionTitle align="text-center">Histório dos DevFests</SectionTitle>
+      <section className="container pt-2 pb-7">
+        <SectionTitle align="text-center">Histórico dos DevFests</SectionTitle>
         <Timeline />
       </section>
 
-      {/* Canais de Comunicação */}
-      <section className="container pt-2 pb-14">
-        <SectionTitle align="text-center">Canais de Comunicação</SectionTitle>
-        <div className="flex flex-wrap md:justify-between justify-center mt-8 gap-8">
-          <div className="flex flex-col gap-2 items-center">
-            <a arial-label="Página Oficial"
-              href="https://gdg.community.dev/gdg-belo-horizonte/
-"
-              target="_blank"
-            >
-              <div className="bg-[#7B7B7B] w-24 h-24 flex justify-center items-center rounded-full transition-all cursor-pointer hover:bg-[#F0F0F0]">
-                <Globe className="w-14 h-14  text-[#F0F0F0] hover:text-[#7B7B7B]" />
-              </div>
-            </a>
-            <h1 className="font-black text-md">Página Oficial</h1>
-          </div>
-          <div className="flex flex-col gap-2 items-center">
-            <a arial-label="Linkedin"
-              href="https://www.linkedin.com/company/gdg-belo-horizonte/"
-              target="_blank"
-            >
-              <div className="bg-[#7B7B7B] w-24 h-24 flex justify-center items-center rounded-full transition-all cursor-pointer hover:bg-[#F0F0F0]">
-                <Linkedin className="w-14 h-14  text-[#F0F0F0] hover:text-[#7B7B7B]" />
-              </div>
-            </a>
-            <h1 className="font-black text-md">Linkedin</h1>
-          </div>
-          <div className="flex flex-col gap-2 items-center">
-            <a arial-label="Instagram" href="https://www.instagram.com/gdg_bh/" target="_blank">
-              <div className="bg-[#7B7B7B] w-24 h-24 flex justify-center items-center rounded-full transition-all cursor-pointer hover:bg-[#F0F0F0]">
-                <Instagram className="w-14 h-14  text-[#F0F0F0] hover:text-[#7B7B7B]" />
-              </div>
-            </a>
-            <h1 className="font-black text-md">Instagram</h1>
-          </div>
-          <div className="flex flex-col gap-2 items-center">
-            <a arial-label="Youtube" href="https://www.youtube.com/@GDGBeloHorizonte" target="_blank">
-              <div className="bg-[#7B7B7B] w-24 h-24 flex justify-center items-center rounded-full transition-all cursor-pointer hover:bg-[#F0F0F0]">
-                <Youtube className="w-14 h-14  text-[#F0F0F0] hover:text-[#7B7B7B]" />
-              </div>
-            </a>
-            <h1 className="font-black text-md">Youtube</h1>
-          </div>
-          <div className="flex flex-col gap-2 items-center">
-            <a arial-label="Twitter" href="https://x.com/gdg_bh" target="_blank">
-              <div className="bg-[#7B7B7B] w-24 h-24 flex justify-center items-center rounded-full transition-all cursor-pointer hover:bg-[#F0F0F0]">
-                <Twitter className="w-14 h-14  text-[#F0F0F0] hover:text-[#7B7B7B]" />
-              </div>
-            </a>
-            <h1 className="font-black text-md">Twitter | X</h1>
-          </div>
-        </div>
+      <section className="container">
+        <Detail
+          title="GDG"
+          image="/img/logo_gdg-bg.png"
+          text="O GDG de Belo Horizonte é responsável pela organização do DevFest. O evento é liderado por Fernanda Costa, Fernanda Rezende, Guilherme Radicchi e Renato Pereira. Esses quatro líderes dedicam-se à coordenação e execução das atividades, garantindo que tudo ocorra de maneira organizada e eficiente. Sob sua liderança, o DevFest se destaca como um momento importante para a comunidade de desenvolvedores locais."
+        />
+
+        <Detail
+          title="Web Tech"
+          image="/img/logo_webtech.jpeg"
+          text="A WebTech é um projeto de extensão da PUC Minas que tem como objetivo gerar espaço de trabalho para que alunos e professores criem juntos aplicações, ferramentas e conteúdo para interessados em criar soluções e produtos digitais."
+        />
       </section>
     </>
   );
