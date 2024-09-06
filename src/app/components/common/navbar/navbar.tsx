@@ -12,58 +12,43 @@ export const Navbar = () => {
       name: "Home",
       link: "/",
     },
-    /*{
-      name: "Sobre",
-      link: "../../about",
-    },*/
     {
       name: "Programação",
       link: "../../schedule",
-    } /*
-    {
-      name: "Conheça BH",
-      link: "../../bh",
     },
-    {
-      name: "Organizadores",
-      link: "../../organizers",
-    },*/,
   ];
 
   const [showMe, setShowMe] = useState(false);
+
   function toggle() {
     setShowMe(!showMe);
   }
 
   return (
     <>
-      {" "}
       <nav className="w-full h-16 flex items-center px-6 justify-between shadow-lg">
         <div className="hidden md:block">
           <Link href="/">
             <Image src="/img/logo_gdg.png" width={150} height={150} alt="GDG - Google Io" />
           </Link>
         </div>
-        <ul className=" hidden md:flex md:justify-center md:gap-8 ">
+        <ul className="hidden md:flex md:justify-center md:gap-8">
           {links.map((el, i) => (
             <li key={i}>
               <Link href={el.link} className="relative inline-block">
                 <span className="bg-white hover:bg-gradient transition ease-in-out delay-400 duration-300 pb-1">
-                  <span className=" bg-white">{el.name}</span>
+                  <span className="bg-white">{el.name}</span>
                 </span>
               </Link>
             </li>
           ))}
         </ul>
         <div className="hidden md:block">
-          <HomeButton
-            border="border-2 border-[#1e1e1e]"
-            link="https://www.sympla.com.br/evento/devfest-belo-horizonte/2586443"
-          >
+          <HomeButton border="border-2 border-[#1e1e1e]" link="https://www.sympla.com.br/evento/devfest-belo-horizonte/2586443">
             Inscreva-se
           </HomeButton>
         </div>
-        <div className="md:hidden flex flex-row items-center w-full justify-between mx-6">
+        <div className="md:hidden flex flex-row items-center w-full justify-between x-6">
           <Link href="/">
             <Image src="/img/logo_gdg.png" width={150} height={150} alt="GDG - Google Io" />
           </Link>
@@ -75,13 +60,19 @@ export const Navbar = () => {
           />
         </div>
       </nav>
+
       <div className={`${showMe ? "block" : "hidden"} transition-transform`}>
         {links.map((el, i) => (
           <li
             key={i}
+            onClick={toggle}
             className="list-none w-full flex text-sm text-zinc-700 justify-center py-2 hover:bg-gray-50 border-b border-gray-100"
           >
-            <Link href={el.link}>{el.name}</Link>
+            <Link
+              href={el.link}
+            >
+              {el.name}
+            </Link>
           </li>
         ))}
       </div>

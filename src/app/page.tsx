@@ -18,7 +18,9 @@ import SectionDescription from "./components/common/SectionDescription";
 export default function Home() {
   useEffect(() => {
     AOS.init({
-      duration: 500, // duração da animação
+      duration: 500,
+      once: true,
+      mirror: false,
     });
   }, []);
 
@@ -91,7 +93,7 @@ export default function Home() {
               <span className="text-text-color font-bold">Local:</span>
               <h4 className="text-lg mb-2 hover:underline">
                 <a href="https://www.google.com/maps/place/PUC+Minas+-+Unidade+Pra%C3%A7a+da+Liberdade/@-19.9332735,-43.9397233,17z/data=!3m1!4b1!4m6!3m5!1s0xa699dc57d681cf:0x897f2f71ae2c8900!8m2!3d-19.9332786!4d-43.9371484!16s%2Fg%2F1ptyh1cl7?entry=tts&g_ep=EgoyMDI0MDkwMi4xKgBIAVAD">
-                  <strong>PUC Minas</strong> - Praça da Liberdade
+                  <strong>PUC Minas</strong> - Lourdes
                 </a>
               </h4>
               <a
@@ -104,27 +106,29 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="container py-8 px-4 flex flex-col text-center sm:w-4/5 lg:w-full lg:flex-row lg:items-center">
+
+      <section className="container py-8 px-4 flex flex-col text-center lg:w-full lg:flex-row lg:items-center">
         <div
-          className="h-full mb-10 lg:mb-0 lg:mr-10 lg:w-full lg:text-justify"
+          className="h-full mb-10 lg:mb-0 lg:mr-10 lg:w-full lg:text-justify gap-2"
           data-aos="fade-left"
         >
           <h1 className="text-3xl font-black py-4">O que é o DevFest?</h1>
-          <p className="lg:mr-10">
-            O DevFest é uma conferência global de desenvolvedores organizada pelos{" "}
-            <b>Google Developer Groups (GDGs)</b> ao redor do mundo. Esses eventos, organizados pela
-            comunidade, focam em aprendizado, construção de projetos e conexão entre desenvolvedores
-            e profissionais de tecnologia. As atividades oferecidas incluem{" "}
-            <b>palestras técnicas, workshops práticos e oportunidades de networking</b>,
-            proporcionando um ambiente rico para o desenvolvimento profissional e a troca de
-            conhecimento.
-          </p>
-          <p className="pt-6 lg:mr-10">
-            Estamos empolgados em anunciar a <b>sexta edição do DevFest em Belo Horizonte!</b> Desde
-            a sua primeira edição em 2015, o DevFest BH tem sido um evento crucial para a comunidade
-            de desenvolvedores da região, crescendo a cada ano em tamanho e impacto.
-          </p>
-          <div className="h-8"></div>
+          <div className="gap-2">
+            <SectionDescription>
+              O DevFest é uma conferência global de desenvolvedores organizada pelos{" "}
+              <b>Google Developer Groups (GDGs)</b> ao redor do mundo. Esses eventos, organizados
+              pela comunidade, focam em aprendizado, construção de projetos e conexão entre
+              desenvolvedores e profissionais de tecnologia. As atividades oferecidas incluem{" "}
+              <b>palestras técnicas, workshops práticos e oportunidades de networking</b>,
+              proporcionando um ambiente rico para o desenvolvimento profissional e a troca de
+              conhecimento.
+            </SectionDescription>
+            <SectionDescription>
+              Estamos empolgados em anunciar a <b>sexta edição do DevFest em Belo Horizonte!</b>{" "}
+              Desde a sua primeira edição em 2015, o DevFest BH tem sido um evento crucial para a
+              comunidade de desenvolvedores da região, crescendo a cada ano em tamanho e impacto.
+            </SectionDescription>
+          </div>
         </div>
 
         <div className="flex justify-center lg:w-2/4">
@@ -167,6 +171,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+
       <div className="bg-[#F0F0F0]">
         <section className="container pt-8 pb-16">
           <SectionTitle align="text-center">
@@ -186,12 +191,14 @@ export default function Home() {
           {/*<SpeakerCarousel />*/}
         </section>
       </div>
+
       <section className="container pt-8 pb-16" data-aos="fade-up" data-aos-duration="800">
         <SectionTitle align="text-center">Patrocinadores</SectionTitle>
         <SponsorsSection />
       </section>
+
       <div className="bg-dark-background text-white">
-        <section className="container py-12 px-4 flex flex-col text-center sm:w-4/5 lg:w-full lg:flex-row lg:items-center">
+        <section className="container py-12 px-4 flex flex-col text-center  lg:w-full lg:flex-row lg:items-center">
           <div className="h-full mb-10 lg:mb-0 lg:mr-10 lg:w-full lg:text-justify ">
             <SectionTitle align="text-center font-black">Mídia Kit</SectionTitle>
             <SectionDescription>
@@ -205,6 +212,7 @@ export default function Home() {
           </div>
         </section>
       </div>
+
       <section className="container pt-16 pb-16">
         <SectionTitle align="text-center">Canais de Comunicação</SectionTitle>
         <div className="mt-7 flex justify-center flex-wrap" data-aos="zoom-out">
@@ -234,6 +242,7 @@ export default function Home() {
           />
         </div>
       </section>
+
       <div className="py-16 bg-dark-background md:py-0" id="maps">
         <section className="container h-32 text-white flex flex-col justify-between items-center md:flex-row">
           <h1 className="font-black text-3xl mb-10 md:mb-0">Localização</h1>
@@ -245,11 +254,12 @@ export default function Home() {
               className="hover:underline"
               href="https://www.google.com/maps/place/PUC+Minas+-+Unidade+Pra%C3%A7a+da+Liberdade/@-19.9332735,-43.9397233,17z/data=!3m1!4b1!4m6!3m5!1s0xa699dc57d681cf:0x897f2f71ae2c8900!8m2!3d-19.9332786!4d-43.9371484!16s%2Fg%2F1ptyh1cl7?entry=tts&g_ep=EgoyMDI0MDkwMi4xKgBIAVAD"
             >
-              <strong>Local:</strong> Puc Minas Liberdade Av. Brasil, 2023 - Funcionários
+              <strong>Local:</strong> Puc Minas Lourdes Av. Brasil, 2023 - Funcionários
             </a>
           </div>
         </section>
       </div>
+
       <section className="h-64">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3750.789497313057!2d-43.939723324251055!3d-19.933273538411505!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xa699dc57d681cf%3A0x897f2f71ae2c8900!2sPUC%20Minas%20-%20Unidade%20Pra%C3%A7a%20da%20Liberdade!5e0!3m2!1spt-BR!2sbr!4v1722176637277!5m2!1spt-BR!2sbr"
