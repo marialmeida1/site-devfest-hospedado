@@ -11,11 +11,11 @@ import { HomeLink } from "./components/home/HomeLink";
 import { CommunicationChannelCard } from "./components/home/CommunicationChannelCard";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleQuestion } from "@fortawesome/free-solid-svg-icons";
-import AOS from 'aos';
-import 'aos/dist/aos.css'; 
+import AOS from "aos";
+import "aos/dist/aos.css";
+import SectionDescription from "./components/common/SectionDescription";
 
 export default function Home() {
-
   useEffect(() => {
     AOS.init({
       duration: 500, // duração da animação
@@ -36,14 +36,22 @@ export default function Home() {
     <>
       <div className="bg-gradient-to-bottom">
         <Image
-          className="w-full"
+          className="w-full hidden md:block"
           width={1920}
           height={1080}
-          src="/img/home/banner/banner.jpg"
+          src="/img/home/banner/banner.jpeg"
           alt="Banner Devfest"
         />
-        <div className="min-h-48 md:min-h-36 bg-gradient-to-b from-[#eeeeee] to-[#ffffff]">
-          <CountdownTimer/>
+
+        <Image
+          className="w-full block md:hidden"
+          width={1920}
+          height={1080}
+          src="/img/home/banner/banner_mobile.jpeg"
+          alt="Banner Devfest"
+        />
+        <div className="min-h-96 md:min-h-36 bg-gradient-to-b from-[#eeeeee] to-[#ffffff]">
+          <CountdownTimer />
         </div>
       </div>
 
@@ -54,7 +62,7 @@ export default function Home() {
           bg="bg-dark-background"
         />
         <div className="w-80 h-1 my-10 md:w-1 md:mx-10 md:h-44 bg-text-color"></div>
-        <div className="flex flex-col gap-4" data-aos="fade-up">
+        <div className="flex flex-col gap-4">
           <div className="text-white flex">
             <Image
               className="mr-6"
@@ -96,18 +104,29 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section data-aos="fade-left" className="container py-8 px-4 flex flex-col text-center sm:w-4/5 lg:w-full lg:flex-row lg:items-center">
-        <div className="h-full mb-10 lg:mb-0 lg:mr-10 lg:w-full lg:text-justify">
-          <h1 className="text-3xl font-black py-4">O que é o Dev Fest?</h1>
-          <p className="lg:mr-24">
-            DevFest é uma conferência global de desenvolvedores organizada por Google Developer
-            Groups (GDGs) em todo o mundo, com palestras, workshops e oportunidades de networking.
+      <section className="container py-8 px-4 flex flex-col text-center sm:w-4/5 lg:w-full lg:flex-row lg:items-center">
+        <div
+          className="h-full mb-10 lg:mb-0 lg:mr-10 lg:w-full lg:text-justify"
+          data-aos="fade-left"
+        >
+          <h1 className="text-3xl font-black py-4">O que é o DevFest?</h1>
+          <p className="lg:mr-10">
+            O DevFest é uma conferência global de desenvolvedores organizada pelos{" "}
+            <b>Google Developer Groups (GDGs)</b> ao redor do mundo. Esses eventos, organizados pela
+            comunidade, focam em aprendizado, construção de projetos e conexão entre desenvolvedores
+            e profissionais de tecnologia. As atividades oferecidas incluem{" "}
+            <b>palestras técnicas, workshops práticos e oportunidades de networking</b>,
+            proporcionando um ambiente rico para o desenvolvimento profissional e a troca de
+            conhecimento.
+          </p>
+          <p className="pt-6 lg:mr-10">
+            Estamos empolgados em anunciar a <b>sexta edição do DevFest em Belo Horizonte!</b> Desde
+            a sua primeira edição em 2015, o DevFest BH tem sido um evento crucial para a comunidade
+            de desenvolvedores da região, crescendo a cada ano em tamanho e impacto.
           </p>
           <div className="h-8"></div>
-          <HomeButton border="border-2 border-[#1e1e1e]" link="/about">
-            Saiba mais
-          </HomeButton>
         </div>
+
         <div className="flex justify-center lg:w-2/4">
           <div className="w-full h-72 grid grid-cols-2 gap-2 md:w-2/3 lg:w-full">
             <div className="row-span-2 relative">
@@ -152,7 +171,12 @@ export default function Home() {
         <section className="container pt-8 pb-16">
           <SectionTitle align="text-center">
             Palestrantes{" "}
-            <HomeLink link="#" text="EM BREVE" bg="bg-[#F0F0F0] hover:text-white" color="text-zinc-900"></HomeLink>
+            <HomeLink
+              link="#"
+              text="EM BREVE"
+              bg="bg-[#F0F0F0] hover:text-white"
+              color="text-zinc-900"
+            ></HomeLink>
           </SectionTitle>
           <div className="flex justify-center md:-ml-24 -ml-12" data-aos="fade-right">
             <FontAwesomeIcon icon={faCircleQuestion} className="text-9xl text-red -mr-8" />
@@ -169,24 +193,15 @@ export default function Home() {
       <div className="bg-dark-background text-white">
         <section className="container py-12 px-4 flex flex-col text-center sm:w-4/5 lg:w-full lg:flex-row lg:items-center">
           <div className="h-full mb-10 lg:mb-0 lg:mr-10 lg:w-full lg:text-justify ">
-            <h1 className="text-3xl font-black py-4">Media Kit</h1>
-            <p className="lg:mr-24 ">
+            <SectionTitle align="text-center font-black">Mídia Kit</SectionTitle>
+            <SectionDescription>
               Interessado em se tornar um patrocinador? Entre em contato conosco pelo e-mail{" "}
-              <a href="mailto:gdgbhz@gmail.com" className="text-blue hover:underline">gdgbhz@gmail.com</a> para saber mais sobre as
-              oportunidades de parceria e como sua empresa pode se envolver.
-            </p>
-            <div className="h-8"></div>
-          </div>
-          <div className="flex justify-center lg:w-2/4" data-aos="fade-left">
-            <a href="/Devfest.pdf" download="Devfest.pdf" aria-label="Conteúdos">
-              <div className="bg-dark-background px-1 py-1 rounded-md border-0 border-transparent bg-gradient p-[2px]">
-                <div className="w-80 h-44 bg-dark-background flex justify-center items-center rounded-lg">
-                  <div className="w-10 h-10 rounded-full bg-text-color flex justify-center items-center">
-                    <ArrowDown className="text-dark-background font-black" />
-                  </div>
-                </div>
-              </div>
-            </a>
+              <a href="mailto:gdgbhz@gmail.com" className="text-blue hover:underline">
+                gdgbhz@gmail.com
+              </a>{" "}
+              para saber mais sobre as oportunidades de parceria e como sua empresa pode se
+              envolver.
+            </SectionDescription>
           </div>
         </section>
       </div>
@@ -194,20 +209,20 @@ export default function Home() {
         <SectionTitle align="text-center">Canais de Comunicação</SectionTitle>
         <div className="mt-7 flex justify-center flex-wrap" data-aos="zoom-out">
           <CommunicationChannelCard
-            cardLink="https://chat.whatsapp.com/CxZFvGaZF095OIzy71rXTo"
-            cardColor="green hover:bg-green-dark"
-            cardText="Comunidade GDG"
-            imagePath="/img/home/icons/whatsapp.svg"
+            cardLink="https://www.youtube.com/@GDG_BH"
+            cardColor="red hover:bg-red-dark"
+            cardText="Canal Youtube"
+            imagePath="/img/home/icons/youtube.svg"
           />
           <CommunicationChannelCard
             cardLink="https://www.instagram.com/gdg_bh?igsh=MThldWxkcmZ3MWwxYw=="
-            cardColor="red hover:bg-red-dark"
+            cardColor="yellow hover:bg-yellow-dark"
             cardText="Instagram GDG"
             imagePath="/img/home/icons/instagram.svg"
           />
           <CommunicationChannelCard
             cardLink="https://gdg.community.dev/gdg-belo-horizonte/"
-            cardColor="yellow hover:bg-yellow-dark"
+            cardColor="green hover:bg-green-dark"
             cardText="Site GDG"
             imagePath="/img/home/icons/web.svg"
           />
@@ -226,7 +241,10 @@ export default function Home() {
             <p>
               <strong>Data:</strong> 26 de outubro | 8:00 horas
             </p>
-            <a className="hover:underline" href="https://www.google.com/maps/place/PUC+Minas+-+Unidade+Pra%C3%A7a+da+Liberdade/@-19.9332735,-43.9397233,17z/data=!3m1!4b1!4m6!3m5!1s0xa699dc57d681cf:0x897f2f71ae2c8900!8m2!3d-19.9332786!4d-43.9371484!16s%2Fg%2F1ptyh1cl7?entry=tts&g_ep=EgoyMDI0MDkwMi4xKgBIAVAD">
+            <a
+              className="hover:underline"
+              href="https://www.google.com/maps/place/PUC+Minas+-+Unidade+Pra%C3%A7a+da+Liberdade/@-19.9332735,-43.9397233,17z/data=!3m1!4b1!4m6!3m5!1s0xa699dc57d681cf:0x897f2f71ae2c8900!8m2!3d-19.9332786!4d-43.9371484!16s%2Fg%2F1ptyh1cl7?entry=tts&g_ep=EgoyMDI0MDkwMi4xKgBIAVAD"
+            >
               <strong>Local:</strong> Puc Minas Liberdade Av. Brasil, 2023 - Funcionários
             </a>
           </div>

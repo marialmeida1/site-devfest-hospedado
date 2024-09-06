@@ -16,6 +16,7 @@ interface TableInfo {
 }
 
 const infos: TableInfo[] = [
+  // Horários antes de 13:20 permanecem os mesmos
   {
     id_line: 1,
     id_col: 1,
@@ -133,6 +134,8 @@ const infos: TableInfo[] = [
     speaker: "Palestrante",
     level: "",
   },
+
+  // Horários ajustados a partir de 13:20
   {
     id_line: 6,
     id_col: 1,
@@ -172,8 +175,8 @@ const infos: TableInfo[] = [
   {
     id_line: 7,
     id_col: 1,
-    hourly_start: "15:00",
-    hourly_end: "15:50",
+    hourly_start: "14:10",
+    hourly_end: "15:00",
     name: "Palestra 1",
     speaker: "Palestrante",
     level: "Iniciante",
@@ -181,8 +184,8 @@ const infos: TableInfo[] = [
   {
     id_line: 7,
     id_col: 2,
-    hourly_start: "15:00",
-    hourly_end: "15:50",
+    hourly_start: "14:10",
+    hourly_end: "15:00",
     name: "Palestra 2",
     speaker: "Palestrante",
     level: "Iniciante",
@@ -190,8 +193,8 @@ const infos: TableInfo[] = [
   {
     id_line: 7,
     id_col: 3,
-    hourly_start: "15:00",
-    hourly_end: "15:50",
+    hourly_start: "14:10",
+    hourly_end: "15:00",
     name: "Palestra 3",
     speaker: "Palestrante",
     level: "Iniciante",
@@ -199,8 +202,8 @@ const infos: TableInfo[] = [
   {
     id_line: 7,
     id_col: 4,
-    hourly_start: "15:00",
-    hourly_end: "15:50",
+    hourly_start: "14:10",
+    hourly_end: "15:00",
     name: "Workshop 2",
     speaker: "Palestrante",
     level: "Iniciante",
@@ -208,27 +211,54 @@ const infos: TableInfo[] = [
   {
     id_line: 8,
     id_col: 1,
+    hourly_start: "15:00",
+    hourly_end: "15:50",
+    name: "Palestra 1",
+    speaker: "Palestrante",
+    level: "Iniciante",
+  },
+  {
+    id_line: 8,
+    id_col: 2,
+    hourly_start: "15:00",
+    hourly_end: "15:50",
+    name: "Palestra 2",
+    speaker: "Palestrante",
+    level: "Iniciante",
+  },
+  {
+    id_line: 8,
+    id_col: 3,
+    hourly_start: "15:00",
+    hourly_end: "15:50",
+    name: "Palestra 3",
+    speaker: "Palestrante",
+    level: "Iniciante",
+  },
+  {
+    id_line: 8,
+    id_col: 4,
+    hourly_start: "15:00",
+    hourly_end: "15:50",
+    name: "Workshop 2",
+    speaker: "Palestrante",
+    level: "Iniciante",
+  },
+  {
+    id_line: 9,
+    id_col: 1,
     hourly_start: "15:50",
-    hourly_end: "16:40",
+    hourly_end: "16:10",
     name: "Palestra Encerramento",
     speaker: "Palestrante",
     level: "Iniciante",
   },
   {
-    id_line: 9,
+    id_line: 10,
     id_col: 1,
-    hourly_start: "17:00",
-    hourly_end: "17:20",
-    name: "Encerramento + Sorteio + Foto Oficial",
-    speaker: "Palestrante",
-    level: "Iniciante",
-  },
-  {
-    id_line: 9,
-    id_col: 1,
-    hourly_start: "17:20",
-    hourly_end: "18:30",
-    name: "Happy Hour",
+    hourly_start: "16:10",
+    hourly_end: "18:00",
+    name: "Encerramento + Sorteio + Foto Oficial + Happy Hour",
     speaker: "Palestrante",
     level: "Iniciante",
   },
@@ -270,17 +300,17 @@ export default function TableCel({ id_line, id_col, rep, trail }: Props) {
         .map((el, i) => (
           <div
             key={i}
-            className="p-4 bg-zinc-50 rounded-md flex flex-col gap-2 shadow border"
+            className="p-4 bg-zinc-50 rounded-md flex flex-col items-center gap-2 shadow border"
           >
             {trails[trail - 1] && trail !== 5 && (
               <div className="font-black rounded text-zinc-600">
                 {trails[trail - 1]}
               </div>
             )}
-            <div className="w-fit flex flex-row text-xs text-zinc-800 border border-zinc-800 rounded-full px-2 py-0.5">
+            <div className="md:hidden w-fit flex flex-row text-xs text-zinc-800 border border-zinc-800 rounded-full px-2 py-0.5">
               {el.hourly_start} - {el.hourly_end}
             </div>
-            <div className="space-y-1">
+            <div className="space-y-1 w-fit flex flex-col items-center">
               <h2 className="text-xs text-zinc-700">{el.speaker}</h2>
               <h1 className="text-sm font-bold">{el.name}</h1>
             </div>

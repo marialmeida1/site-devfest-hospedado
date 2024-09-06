@@ -8,12 +8,17 @@ import { HomeLink } from "../HomeLink";
 export default function SponsorsSection() {
   return (
     <div>
-      <SponsorDivision category="Diamante">
+      {/* <SponsorDivision category="Diamante">
         <HomeLink link="#" text="EM BREVE" bg="bg-white hover:text-white" color="text-zinc-900"></HomeLink>
-      </SponsorDivision>
-      <SponsorDivision category="Ouro">
-        <HomeLink link="#" text="EM BREVE" bg="bg-white hover:text-white" color="text-zinc-900"></HomeLink>
-      </SponsorDivision>
+      </SponsorDivision> */}
+      {/* <SponsorDivision category="Ouro">
+        <HomeLink
+          link="#"
+          text="EM BREVE"
+          bg="bg-white hover:text-white"
+          color="text-zinc-900"
+        ></HomeLink>
+      </SponsorDivision>*/}
       <SponsorDivision category="Prata">
         <SponsorDivisionItem
           link="https://lucralize.com.br/"
@@ -21,14 +26,24 @@ export default function SponsorsSection() {
           text="Lucralize"
         />
       </SponsorDivision>
-      <SponsorDivision category="Bronze">
-        <HomeLink link="#" text="EM BREVE" bg="bg-white hover:text-white" color="text-zinc-900"></HomeLink>
-      </SponsorDivision>
+      {/* <SponsorDivision category="Bronze">
+        <HomeLink
+          link="#"
+          text="EM BREVE"
+          bg="bg-white hover:text-white"
+          color="text-zinc-900"
+        ></HomeLink>
+      </SponsorDivision>*/}
       <SponsorDivision category="Apoio">
         <SponsorDivisionItem
           link="https://www.pucminas.br/"
           img="/img/sponsors/pucminas.png"
           text="PUC Minas"
+        />
+        <SponsorDivisionItem
+          link="https://webtech.network/"
+          img="/img/sponsors/logo_webtech.jpeg"
+          text="Web Tech PUC Minas"
         />
       </SponsorDivision>
       <SponsorDivision category="Comunidade Parceira">

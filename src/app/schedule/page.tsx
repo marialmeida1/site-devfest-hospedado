@@ -10,6 +10,7 @@ const hourly: string[] = [
   "10:50",
   "12:00",
   "13:20",
+  "14:10",
   "15:00",
   "15:50",
   "17:00",
@@ -23,7 +24,7 @@ export default function Schedule() {
   };
 
   return (
-    <section className="container md:py-8 min-h-screen">
+    <section className="container pb-8 md:py-8 min-h-screen">
       <SectionTitle align="text-center">Programação</SectionTitle>
 
       <div className="py-2 w-full md:hidden flex flex-row gap-2">

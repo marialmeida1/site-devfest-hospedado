@@ -9,10 +9,9 @@ interface props {
 export default function SponsorDivisionItem({ text, img, link }: props) {
   return (
     <div className="mx-4 mb-8 flex flex-col justify-center items-center">
-      <a href={link}>
-        <Image className="mb-2" src={img} alt={text} width={70} height={70} />
+      <a href={link} target="_blank">
+        <Image className="mb-2" src={img} alt={text} width={180} height={180} />
       </a>
-      <p className="font-black">{text}</p>
     </div>
   );
 }

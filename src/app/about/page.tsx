@@ -3,7 +3,7 @@ import Image from "next/image";
 import SectionTitle from "../components/common/SectionTitle";
 import SectionDescription from "../components/common/SectionDescription";
 import { useEffect, useState } from "react";
-import Timeline from "../components/about/Timeline";
+import Timeline from "../components/_about/Timeline";
 import Modal from "../components/common/Modal";
 import Detail from "../components/common/DetailCard";
 import AOS from 'aos';

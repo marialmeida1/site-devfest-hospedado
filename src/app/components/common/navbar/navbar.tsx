@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
+import HomeButton from "../../home/HomeButton";
 
 export const Navbar = () => {
   const links = [
@@ -11,10 +12,10 @@ export const Navbar = () => {
       name: "Home",
       link: "/",
     },
-    {
+    /*{
       name: "Sobre",
       link: "../../about",
-    },
+    },*/
     {
       name: "Programação",
       link: "../../schedule",
@@ -37,8 +38,13 @@ export const Navbar = () => {
   return (
     <>
       {" "}
-      <nav className="w-full h-16 flex items-center justify-center shadow-lg">
-        <ul className="w-3/5 hidden md:flex md:justify-between ">
+      <nav className="w-full h-16 flex items-center px-6 justify-between shadow-lg">
+        <div className="hidden md:block">
+          <Link href="/">
+            <Image src="/img/logo_gdg.png" width={150} height={150} alt="GDG - Google Io" />
+          </Link>
+        </div>
+        <ul className=" hidden md:flex md:justify-center md:gap-8 ">
           {links.map((el, i) => (
             <li key={i}>
               <Link href={el.link} className="relative inline-block">
@@ -49,6 +55,14 @@ export const Navbar = () => {
             </li>
           ))}
         </ul>
+        <div className="hidden md:block">
+          <HomeButton
+            border="border-2 border-[#1e1e1e]"
+            link="https://www.sympla.com.br/evento/devfest-belo-horizonte/2586443"
+          >
+            Inscreva-se
+          </HomeButton>
+        </div>
         <div className="md:hidden flex flex-row items-center w-full justify-between mx-6">
           <Link href="/">
             <Image src="/img/logo_gdg.png" width={150} height={150} alt="GDG - Google Io" />

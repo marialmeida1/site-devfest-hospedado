@@ -15,6 +15,7 @@ const lines: TableRow[] = [
   { hourly: "10:50", td: 5, colspan: 0, div: 1 },
   { hourly: "12:00", td: 2, colspan: 4, div: 1 },
   { hourly: "13:20", td: 5, colspan: 0, div: 1 },
+  { hourly: "14:10", td: 5, colspan: 0, div: 1 },
   { hourly: "15:00", td: 5, colspan: 0, div: 1 },
   { hourly: "15:50", td: 2, colspan: 4, div: 1 },
   { hourly: "17:00", td: 2, colspan: 4, div: 2 },
@@ -25,7 +26,7 @@ const generateCells = (el: TableRow, i: number) => {
     j >= 1 ? (
       <td
         key={j}
-        className="py-10 h-80 px-2 text-left border border-zinc-300 space-y-4 hidden md:table-cell"
+        className="py-10 h-60 px-2 text-left border border-zinc-300 space-y-4 hidden md:table-cell"
         colSpan={el.colspan}
       >
         {Array.from({ length: el.div }).map((_, k) => (
