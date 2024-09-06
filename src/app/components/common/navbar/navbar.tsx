@@ -18,7 +18,7 @@ export const Navbar = () => {
     {
       name: "Programação",
       link: "../../schedule",
-    },/*
+    } /*
     {
       name: "Conheça BH",
       link: "../../bh",
@@ -26,7 +26,7 @@ export const Navbar = () => {
     {
       name: "Organizadores",
       link: "../../organizers",
-    },*/
+    },*/,
   ];
 
   const [showMe, setShowMe] = useState(false);
@@ -41,18 +41,17 @@ export const Navbar = () => {
         <ul className="w-3/5 hidden md:flex md:justify-between ">
           {links.map((el, i) => (
             <li key={i}>
-              <Link href={el.link} className="hover:border-b-2 border-gradient">{el.name}</Link>
+              <Link href={el.link} className="relative inline-block">
+                <span className="bg-white hover:bg-gradient transition ease-in-out delay-400 duration-300 pb-1">
+                  <span className=" bg-white">{el.name}</span>
+                </span>
+              </Link>
             </li>
           ))}
         </ul>
         <div className="md:hidden flex flex-row items-center w-full justify-between mx-6">
           <Link href="/">
-            <Image
-              src="/img/logo_gdg.png"
-              width={150}
-              height={150}
-              alt="GDG - Google Io"
-            />
+            <Image src="/img/logo_gdg.png" width={150} height={150} alt="GDG - Google Io" />
           </Link>
 
           <FontAwesomeIcon

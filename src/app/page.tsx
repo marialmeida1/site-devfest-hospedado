@@ -1,21 +1,27 @@
 "use client";
-import SectionDescription from "./components/common/SectionDescription";
 import SectionTitle from "./components/common/SectionTitle";
 import CountdownTimer from "./components/home/CountdownTimer";
 import HomeButton from "./components/home/HomeButton";
-import SpeakerCarousel from "./components/home/SpeakerCarousel";
-import QuestionAccordion from "./components/home/QuestionAccordion";
 import SponsorsSection from "./components/home/SponsorsSection";
 import { ArrowDown } from "lucide-react";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Modal from "./components/common/Modal";
 import { HomeLink } from "./components/home/HomeLink";
 import { CommunicationChannelCard } from "./components/home/CommunicationChannelCard";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleQuestion } from "@fortawesome/free-solid-svg-icons";
+import AOS from 'aos';
+import 'aos/dist/aos.css'; 
 
 export default function Home() {
+
+  useEffect(() => {
+    AOS.init({
+      duration: 500, // duração da animação
+    });
+  }, []);
+
   const [selectedInfo, setSelectedInfo] = useState<string | null>(null);
 
   const openModal = (info: string) => {
@@ -36,8 +42,8 @@ export default function Home() {
           src="/img/home/banner/banner.jpg"
           alt="Banner Devfest"
         />
-        <div className="min-h-32 md:min-h-36 bg-gradient-to-b from-[#eeeeee] to-[#ffffff]">
-          <CountdownTimer />
+        <div className="min-h-48 md:min-h-36 bg-gradient-to-b from-[#eeeeee] to-[#ffffff]">
+          <CountdownTimer/>
         </div>
       </div>
 
@@ -48,7 +54,7 @@ export default function Home() {
           bg="bg-dark-background"
         />
         <div className="w-80 h-1 my-10 md:w-1 md:mx-10 md:h-44 bg-text-color"></div>
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-4" data-aos="fade-up">
           <div className="text-white flex">
             <Image
               className="mr-6"
@@ -90,7 +96,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="container py-8 px-4 flex flex-col text-center sm:w-4/5 lg:w-full lg:flex-row lg:items-center">
+      <section data-aos="fade-left" className="container py-8 px-4 flex flex-col text-center sm:w-4/5 lg:w-full lg:flex-row lg:items-center">
         <div className="h-full mb-10 lg:mb-0 lg:mr-10 lg:w-full lg:text-justify">
           <h1 className="text-3xl font-black py-4">O que é o Dev Fest?</h1>
           <p className="lg:mr-24">
@@ -146,9 +152,9 @@ export default function Home() {
         <section className="container pt-8 pb-16">
           <SectionTitle align="text-center">
             Palestrantes{" "}
-            <HomeLink link="#" text="EM BREVE" bg="bg-[#F0F0F0]" color="text-zinc-900"></HomeLink>
+            <HomeLink link="#" text="EM BREVE" bg="bg-[#F0F0F0] hover:text-white" color="text-zinc-900"></HomeLink>
           </SectionTitle>
-          <div className="flex justify-center md:-ml-24 -ml-12">
+          <div className="flex justify-center md:-ml-24 -ml-12" data-aos="fade-right">
             <FontAwesomeIcon icon={faCircleQuestion} className="text-9xl text-red -mr-8" />
             <FontAwesomeIcon icon={faCircleQuestion} className="text-9xl text-yellow -mr-8" />
             <FontAwesomeIcon icon={faCircleQuestion} className="text-9xl text-blue -mr-8" />
@@ -156,22 +162,7 @@ export default function Home() {
           {/*<SpeakerCarousel />*/}
         </section>
       </div>
-      {/*<section className="container py-8">
-        <SectionTitle align="text-center">Dúvidas frequentes</SectionTitle>
-        <QuestionAccordion
-          question="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-          answer="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-        />
-        <QuestionAccordion
-          question="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-          answer="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-        />
-        <QuestionAccordion
-          question="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-          answer="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-        />
-      </section>*/}
-      <section className="container pt-8 pb-16">
+      <section className="container pt-8 pb-16" data-aos="fade-up" data-aos-duration="800">
         <SectionTitle align="text-center">Patrocinadores</SectionTitle>
         <SponsorsSection />
       </section>
@@ -186,7 +177,7 @@ export default function Home() {
             </p>
             <div className="h-8"></div>
           </div>
-          <div className="flex justify-center lg:w-2/4">
+          <div className="flex justify-center lg:w-2/4" data-aos="fade-left">
             <a href="/Devfest.pdf" download="Devfest.pdf" aria-label="Conteúdos">
               <div className="bg-dark-background px-1 py-1 rounded-md border-0 border-transparent bg-gradient p-[2px]">
                 <div className="w-80 h-44 bg-dark-background flex justify-center items-center rounded-lg">
@@ -201,7 +192,7 @@ export default function Home() {
       </div>
       <section className="container pt-16 pb-16">
         <SectionTitle align="text-center">Canais de Comunicação</SectionTitle>
-        <div className="mt-7 flex justify-center flex-wrap">
+        <div className="mt-7 flex justify-center flex-wrap" data-aos="zoom-out">
           <CommunicationChannelCard
             cardLink="https://chat.whatsapp.com/CxZFvGaZF095OIzy71rXTo"
             cardColor="green hover:bg-green-dark"

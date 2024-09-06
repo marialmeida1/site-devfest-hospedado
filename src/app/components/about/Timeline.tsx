@@ -1,8 +1,10 @@
 "use client"
 import Image from "next/image";
 import styles from "./Timeline.module.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Modal from "../common/Modal";
+import AOS from 'aos';
+import 'aos/dist/aos.css'; 
 
 interface Events {
   title: string;
@@ -40,6 +42,12 @@ const events: Events[] = [
 
 export default function Timeline() {
 
+  useEffect(() => {
+    AOS.init({
+      duration: 1000, // duração da animação
+    });
+  }, []);
+
   const [selectedEvent, setSelectedEvent] = useState<Events | null>(null);
 
   const openModal = (event: Events) => {
@@ -55,7 +63,7 @@ export default function Timeline() {
       {events.map((el, i) => (
         <div key={i} className="flex flex-row lg:flex-col">
           <div className="flex justify-center align-middle relative lg:hidden">
-            <div className="bg-gray-900 rounded-full top-1/2 w-3 h-3 absolute"></div>
+            <div className="bg-gray-900 rounded-full top-1/2 w-3 h-3 absolute" data-aos="fade-down"></div>
           </div>
 
           <div onClick={() => openModal(el)} className="w-2/3 md:w-full cursor-pointer h-40 flex items-center justify-center pl-4 lg:pl-0 lg:pb-12">
@@ -71,12 +79,12 @@ export default function Timeline() {
           </div>
 
           <div className="flex flex-col align-middle justify-center pl-2">
-            <h4 className="pt-2 lg:pt-6 lg:pb-4 text-center font-black text-3xl text-zinc-800">
+            <h4 className="pt-2 lg:pt-6 lg:pb-4 text-center font-black text-3xl text-zinc-800" data-aos="zoom-in">
               {el.year}
             </h4>
           </div>
 
-          <div className="hidden justify-center relative lg:flex">
+          <div className="hidden justify-center relative lg:flex" data-aos="fade-right">
             <div
               className={`bg-gray-900 rounded-full w-3 h-3 ${styles["position-point"]}`}
             ></div>

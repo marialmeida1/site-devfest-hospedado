@@ -8,7 +8,7 @@ interface SponsorDivisionProps {
 
 export default function SponsorDivision({ category, children }: SponsorDivisionProps) {
     return (
-        <div className="mt-4 border-t-2 border-[#404040]">
+        <div className="mt-4 border-t-2 border-[#7c7c7c]">
             <h1 className="my-6 text-2xl leading-9 uppercase text-[#979797] font-light text-center">
                 {category}
             </h1>

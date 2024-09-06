@@ -28,8 +28,7 @@ const calculateTimeRemaining = (targetDate: Date): TimeRemaining => {
 
 export default function CountdownTimer() {
     const targetDate = useMemo(() => new Date("2024-10-26T08:00:00-03:00"), []);
-    const [timeRemaining, setTimeRemaining] = useState<TimeRemaining | null>(null);
-    const [isMounted, setIsMounted] = useState(false);
+    const [timeRemaining, setTimeRemaining] = useState<TimeRemaining>(calculateTimeRemaining(targetDate));
 
     const calculateAndSetTimeRemaining = useCallback(() => {
         const time = calculateTimeRemaining(targetDate);
@@ -37,19 +36,16 @@ export default function CountdownTimer() {
     }, [targetDate]);
 
     useEffect(() => {
-        setIsMounted(true);
         const interval = setInterval(calculateAndSetTimeRemaining, 1000);
         return () => clearInterval(interval);
     }, [calculateAndSetTimeRemaining]);
 
-    if (!isMounted) return null;
-
     return (
         <section className="container py-4 overflow-hidden mx-auto flex justify-center items-center flex-wrap gap-9">
-            <CountdownElement remainingQuantity={timeRemaining?.days || '00'} contentType="dias" bgColor="red" />
-            <CountdownElement remainingQuantity={timeRemaining?.hours || '00'} contentType="horas" bgColor="blue" />
-            <CountdownElement remainingQuantity={timeRemaining?.minutes || '00'} contentType="minutos" bgColor="green" />
-            <CountdownElement remainingQuantity={timeRemaining?.seconds || '00'} contentType="segundos" bgColor="yellow" />
+            <CountdownElement remainingQuantity={timeRemaining.days || '00'} contentType="dias" bgColor="red" />
+            <CountdownElement remainingQuantity={timeRemaining.hours || '00'} contentType="horas" bgColor="blue" />
+            <CountdownElement remainingQuantity={timeRemaining.minutes || '00'} contentType="minutos" bgColor="green" />
+            <CountdownElement remainingQuantity={timeRemaining.seconds || '00'} contentType="segundos" bgColor="yellow" />
         </section>
     );
 }

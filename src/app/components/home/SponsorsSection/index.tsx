@@ -9,10 +9,10 @@ export default function SponsorsSection() {
   return (
     <div>
       <SponsorDivision category="Diamante">
-        <HomeLink link="#" text="EM BREVE" bg="bg-white" color="text-zinc-900"></HomeLink>
+        <HomeLink link="#" text="EM BREVE" bg="bg-white hover:text-white" color="text-zinc-900"></HomeLink>
       </SponsorDivision>
       <SponsorDivision category="Ouro">
-        <HomeLink link="#" text="EM BREVE" bg="bg-white" color="text-zinc-900"></HomeLink>
+        <HomeLink link="#" text="EM BREVE" bg="bg-white hover:text-white" color="text-zinc-900"></HomeLink>
       </SponsorDivision>
       <SponsorDivision category="Prata">
         <SponsorDivisionItem
@@ -22,7 +22,7 @@ export default function SponsorsSection() {
         />
       </SponsorDivision>
       <SponsorDivision category="Bronze">
-        <HomeLink link="#" text="EM BREVE" bg="bg-white" color="text-zinc-900"></HomeLink>
+        <HomeLink link="#" text="EM BREVE" bg="bg-white hover:text-white" color="text-zinc-900"></HomeLink>
       </SponsorDivision>
       <SponsorDivision category="Apoio">
         <SponsorDivisionItem

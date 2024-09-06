@@ -7,7 +7,7 @@ interface HomeButtonProps {
 }
 
 export default function HomeButton({ children, border, link }: HomeButtonProps) {
-    const className = `bg-white px-1.5 py-1 rounded-lg hover:bg-[#1e1e1e] ${border} transition-all hover:text-white`;
+    const className = `transition ease-in-out bg-white px-1.5 py-1 rounded-lg hover:bg-[#1e1e1e] ${border} transition-all hover:text-white`;
 
     return (
         <a href={link} className={className}>

@@ -2,13 +2,21 @@
 import Image from "next/image";
 import SectionTitle from "../components/common/SectionTitle";
 import SectionDescription from "../components/common/SectionDescription";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Timeline from "../components/about/Timeline";
 import Modal from "../components/common/Modal";
-import { Globe, Instagram, Linkedin, Twitter, Youtube } from "lucide-react";
 import Detail from "../components/common/DetailCard";
+import AOS from 'aos';
+import 'aos/dist/aos.css'; 
 
 export default function About() {
+
+  useEffect(() => {
+    AOS.init({
+      duration: 1000, // duração da animação
+    });
+  }, []);
+
   const [selectedInfo, setSelectedInfo] = useState<string | null>(null);
 
   const openModal = (info: string) => {
@@ -22,7 +30,7 @@ export default function About() {
   return (
     <>
       {/* O que é o DevFest */}
-      <section className="container pt-2">
+      <section className="container pt-2" data-aos="fade-in">
         <div>
           <SectionTitle align="text-center">O que é o DevFest?</SectionTitle>
           <SectionDescription>
@@ -44,7 +52,7 @@ export default function About() {
       </section>
 
       {/* O que é o GDG */}
-      <div className="bg-dark-background my-12">
+      <div className="bg-dark-background my-12" >
         <section className="container flex flex-col text-white gap-8 items-center align-middle md:flex-row md:gap-16 py-6">
           <SectionDescription>
             O que é o GDG: Somos o Google Developer Groups de Belo Horizonte (GDG BH), uma
@@ -77,7 +85,7 @@ export default function About() {
         <Timeline />
       </section>
 
-      <section className="container py-8">
+      <section className="container py-8" data-aos="fade-up">
 
         <SectionTitle align="text-center">Organizadores</SectionTitle>
 
