@@ -5,9 +5,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import LevelButton from "./LevelButton";
 import InfoModal from "../common/Modal";
-import AOS from 'aos';
-import 'aos/dist/aos.css'; 
-
 interface TableInfo {
   id_line: number;
   id_col: number;
@@ -254,12 +251,6 @@ interface Props {
 
 export default function TableCel({ id_line, id_col, rep, trail }: Props) {
 
-  useEffect(() => {
-    AOS.init({
-      duration: 200, // duração da animação
-    });
-  }, []);
-
   const [selectedInfo, setSelectedInfo] = useState<TableInfo | null>(null);
 
   const openModal = (info: TableInfo) => {
@@ -278,7 +269,6 @@ export default function TableCel({ id_line, id_col, rep, trail }: Props) {
         )
         .map((el, i) => (
           <div
-          data-aos="zoom-in"
             key={i}
             className="p-4 bg-zinc-50 rounded-md flex flex-col gap-2 shadow border"
           >
