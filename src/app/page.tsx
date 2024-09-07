@@ -1,9 +1,7 @@
 "use client";
 import SectionTitle from "./components/common/SectionTitle";
 import CountdownTimer from "./components/home/CountdownTimer";
-import HomeButton from "./components/home/HomeButton";
 import SponsorsSection from "./components/home/SponsorsSection";
-import { ArrowDown } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import Modal from "./components/common/Modal";
@@ -11,19 +9,9 @@ import { HomeLink } from "./components/home/HomeLink";
 import { CommunicationChannelCard } from "./components/home/CommunicationChannelCard";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleQuestion } from "@fortawesome/free-solid-svg-icons";
-import AOS from "aos";
-import "aos/dist/aos.css";
 import SectionDescription from "./components/common/SectionDescription";
 
 export default function Home() {
-  useEffect(() => {
-    AOS.init({
-      duration: 500,
-      once: true,
-      mirror: false,
-    });
-  }, []);
-
   const [selectedInfo, setSelectedInfo] = useState<string | null>(null);
 
   const openModal = (info: string) => {
@@ -33,6 +21,29 @@ export default function Home() {
   const closeModal = () => {
     setSelectedInfo(null);
   };
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+          } else {
+            entry.target.classList.remove('in-view');
+          }
+        });
+      },
+      { threshold: 0.1 } // 10% do elemento visível dispara o efeito
+    );
+  
+    const elements = document.querySelectorAll("[data-scroll]");
+    elements.forEach((el) => observer.observe(el));
+  
+    return () => {
+      elements.forEach((el) => observer.unobserve(el));
+    };
+  }, []);
+  
 
   return (
     <>
@@ -107,10 +118,10 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="container py-8 px-4 flex flex-col text-center lg:w-full lg:flex-row lg:items-center">
+      <section className="container py-8 px-4 flex flex-col text-center lg:w-full lg:flex-row lg:items-center" data-scroll>
         <div
-          className="h-full mb-10 lg:mb-0 lg:mr-10 lg:w-full lg:text-justify gap-2"
-          data-aos="fade-left"
+          data-scroll
+          className="fade-in h-full mb-10 lg:mb-0 lg:mr-10 lg:w-full lg:text-justify gap-2"
         >
           <h1 className="text-3xl font-black py-4">O que é o DevFest?</h1>
           <div className="gap-2">
@@ -173,7 +184,7 @@ export default function Home() {
       </section>
 
       <div className="bg-[#F0F0F0]">
-        <section className="container pt-8 pb-16">
+        <section className="container pt-8 pb-16 fade-right" data-scroll>
           <SectionTitle align="text-center">
             Palestrantes{" "}
             <HomeLink
@@ -183,7 +194,7 @@ export default function Home() {
               color="text-zinc-900"
             ></HomeLink>
           </SectionTitle>
-          <div className="flex justify-center md:-ml-24 -ml-12" data-aos="fade-right">
+          <div className="flex justify-center md:-ml-24 -ml-12" >
             <FontAwesomeIcon icon={faCircleQuestion} className="text-9xl text-red -mr-8" />
             <FontAwesomeIcon icon={faCircleQuestion} className="text-9xl text-yellow -mr-8" />
             <FontAwesomeIcon icon={faCircleQuestion} className="text-9xl text-blue -mr-8" />
@@ -192,7 +203,7 @@ export default function Home() {
         </section>
       </div>
 
-      <section className="container pt-8 pb-16" data-aos="fade-up" data-aos-duration="800">
+      <section className="container pt-8 pb-16 fade-up" data-scroll>
         <SectionTitle align="text-center">Patrocinadores</SectionTitle>
         <SponsorsSection />
       </section>
@@ -215,7 +226,7 @@ export default function Home() {
 
       <section className="container pt-16 pb-16">
         <SectionTitle align="text-center">Canais de Comunicação</SectionTitle>
-        <div className="mt-7 flex justify-center flex-wrap" data-aos="zoom-out">
+        <div className="mt-7 flex justify-center flex-wrap fade-up" data-scroll>
           <CommunicationChannelCard
             cardLink="https://www.youtube.com/@GDG_BH"
             cardColor="red hover:bg-red-dark"
